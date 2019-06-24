@@ -1,0 +1,2019 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <script>
+            if (localStorage.getItem("debug") === "active") {
+                document.write('<script src="http:\/\/localhost:8097"><\/script>')
+            }
+        </script>
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="mobile-web-app-capable" content="yes" />
+
+        <script src="build/react.development.js"></script>
+        <script src="build/react-dom.development.js"></script>
+        <script src="build/framer.js"></script>
+
+        <link href="build/Draft.css" rel="stylesheet" />
+        <link href="build/style.css" rel="stylesheet" />
+
+        <!-- Workaround for a WebKit bug: loading via URL from the stylesheet is denied if this file is loaded via file:/// -->
+        <style>
+            @font-face {
+                font-family: "Roboto Mono";
+                font-style: normal;
+                font-weight: 400;
+                src: local("Roboto Mono"), local("RobotoMono-Regular"),
+                    url("fonts/RobotoMono-Regular.ttf") format("truetype");
+            }
+            @font-face {
+                font-family: "Input Mono";
+                font-style: normal;
+                font-weight: 400;
+                src: local("Input Mono"), url("fonts/QbHJVUjy6YgY.app.ttf") format("truetype");
+            }
+
+            .framerInternalUI-componentPlaceholder {
+                color: rgb(136, 85, 255);
+                background-color: rgba(163, 113, 255);
+                border-color: rgba(175, 125, 255);
+            }
+
+            .framerInternalUI-errorPlaceholder {
+                color: rgb(255, 0, 85);
+                background-color: rgb(242, 219, 224);
+                border-color: rgb(246, 193, 204);
+                border-style: solid;
+            }
+        </style>
+        <style>
+            * {
+                -webkit-font-smoothing: antialiased;
+            }
+        </style>
+    </head>
+
+    <body>
+        <main></main>
+        <script src="build/standalone.js"></script>
+        
+        <script id="build_index_js">
+        (function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory(require("framer"), require("react"));
+	else if(typeof define === 'function' && define.amd)
+		define(["framer", "react"], factory);
+	else {
+		var a = typeof exports === 'object' ? factory(require("framer"), require("react")) : factory(root["Framer"], root["React"]);
+		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
+	}
+})(window, function(__WEBPACK_EXTERNAL_MODULE_framer__, __WEBPACK_EXTERNAL_MODULE_react__) {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		try { modules[moduleId].call(module.exports, module, module.exports, __webpack_require__); } catch (error) { module.exports = { error } }
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// asset url
+/******/ 	var __module_i = eval("typeof module !== 'undefined' ? module.i : ''");
+/******/ 	var __framer_package = (/(node_modules[/].*)[/](build|dist).index.js/.exec(__module_i) || [])[1]
+/******/ 	function __asset_url__(src) { return __WEBPACK_EXTERNAL_MODULE_framer__.serverURL(__framer_package, src) };
+/******/ 	installedModules['framer/resource'] = { i: 'framer/resource', l: true, exports: { url: __asset_url__ } };
+/******/
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./package.js");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./code sync recursive \\.(t|j)s(x?)|\\.css$":
+/*!***************************************!*\
+  !*** ./code sync \.(t|j)s(x?)|\.css$ ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./Bluetooth.tsx": "./code/Bluetooth.tsx",
+	"./canvas.tsx": "./code/canvas.tsx"
+};
+
+
+function webpackContext(req) {
+	var id = webpackContextResolve(req);
+	return __webpack_require__(id);
+}
+function webpackContextResolve(req) {
+	if(!__webpack_require__.o(map, req)) {
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	}
+	return map[req];
+}
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = "./code sync recursive \\.(t|j)s(x?)|\\.css$";
+
+/***/ }),
+
+/***/ "./code/Bluetooth.tsx":
+/*!****************************!*\
+  !*** ./code/Bluetooth.tsx ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+//# framerSourceMap=eyJ2ZXJzaW9uIjozLCJmaWxlIjoiQmx1ZXRvb3RoLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vY29kZS9CbHVldG9vdGgudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsbUNBQTZDO0FBQzdDLCtCQUE4QjtBQUM5QixtQ0FBd0M7QUFFeEMsa0JBQVMsQ0FBQztJQUNOLElBQUksRUFBRSxXQUFXO0NBQ3BCLENBQUMsQ0FBQTtBQUVGLHlCQUF5QjtBQUN6Qiw0Q0FBNEM7QUFFNUMsU0FBZ0IsU0FBUzs7SUFDckIsTUFBTSxJQUFJLEdBQUcsa0JBQVMsQ0FBQyxNQUFNLENBQUMsQ0FBQTtJQUM5QixNQUFNLENBQUMsS0FBSyxFQUFFLEtBQUssQ0FBQyxHQUFHLGlCQUFRLENBQzNCLEVBQUUsS0FBSyxFQUFFLEdBQUcsRUFBRSxNQUFNLEVBQUUsQ0FBQyxFQUFFLEVBQ3pCLEVBQUUsS0FBSyxFQUFFLENBQUMsRUFBRSxNQUFNLEVBQUUsRUFBRSxFQUFFLENBQzNCLENBQUE7SUFFRCxPQUFPLG9CQUFDLGNBQUssUUFBRSxJQUFJLENBQVMsQ0FBQTtDQUMvQjtBQVJELDhCQVFDO0FBRUQsb0RBQW9EO0FBQ3BELDBCQUEwQjtBQUMxQixzRUFBc0U7QUFDdEUsNEJBQTRCO0FBQzVCLDJDQUEyQztBQUMzQyxhQUFhO0FBQ2IsNEJBQTRCO0FBQzVCLDREQUE0RDtBQUM1RCxhQUFhO0FBQ2IsNkJBQTZCO0FBQzdCLHFDQUFxQztBQUNyQyx5RUFBeUU7QUFDekUsYUFBYTtBQUNiLHVFQUF1RTtBQUN2RSxvQ0FBb0M7QUFDcEMsK0NBQStDO0FBQy9DLGdEQUFnRDtBQUNoRCxtREFBbUQ7QUFDbkQsZ0JBQWdCO0FBQ2hCLDhEQUE4RDtBQUM5RCxhQUFhO0FBQ2IsNEJBQTRCO0FBQzVCLGlDQUFpQztBQUNqQyxhQUFhO0FBQ2IsSUFBSTtBQUVKLDZEQUE2RDtBQUM3RCxpREFBaUQ7QUFDakQseUNBQXlDO0FBRXpDLHFCQUFxQjtBQUNyQixJQUFJO0FBRUosbUNBQW1DO0FBQ25DLDZFQUE2RTtBQUM3RSxxQ0FBcUM7QUFDckMsOEJBQThCO0FBQzlCLElBQUk7QUFDSiJ9
+
+Object.defineProperty(exports, "__esModule", { value: true });
+const reactn_1 = __webpack_require__(/*! reactn */ "./node_modules/reactn/build/index.js");
+const React = __webpack_require__(/*! react */ "react");
+const framer_1 = __webpack_require__(/*! framer */ "framer");
+reactn_1.setGlobal({
+    data: "Jacky lee",
+});
+// Open Preview (CMD + P)
+// API Reference: https://www.framer.com/api
+function Bluetooth() {
+    window["__checkBudget__"]();
+    const asdf = reactn_1.useGlobal("data");
+    const [twist, cycle] = framer_1.useCycle({ scale: 0.5, rotate: 0 }, { scale: 1, rotate: 90 });
+    return React.createElement(framer_1.Frame, null, asdf);
+}
+exports.Bluetooth = Bluetooth;
+// export const requestBluetoothConnection = () => {
+//     navigator.bluetooth
+//         .requestDevice({ filters: [{ services: ["heart_rate"] }] })
+//         .then(device => {
+//             return device.gatt.connect()
+//         })
+//         .then(server => {
+//             return server.getPrimaryService("heart_rate")
+//         })
+//         .then(service => {
+//             console.log("service")
+//             return service.getCharacteristic("heart_rate_measurement")
+//         })
+//         .then(characteristic => characteristic.startNotifications())
+//         .then(characteristic => {
+//             characteristic.addEventListener(
+//                 "characteristicvaluechanged",
+//                 handleCharacteristicValueChanged
+//             )
+//             console.log("Notifications have been started.")
+//         })
+//         .catch(error => {
+//             console.log(error)
+//         })
+// }
+// export const handleCharacteristicValueChanged = event => {
+//     let value = event.target.value.getUint8(1)
+//     // setCurrentHeartRateArray(value)
+//     useData(value)
+// }
+// export const useData = data => {
+//     const [currentHeartRate, setCurrentHeartRateArray] = React.useState(0)
+//     setCurrentHeartRateArray(data)
+//     return currentHeartRate
+// }
+exports.__info__ = [{ name: "Bluetooth", children: false, type: "component" }];
+
+
+/***/ }),
+
+/***/ "./code/canvas.tsx":
+/*!*************************!*\
+  !*** ./code/canvas.tsx ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+// WARNING: this file is auto generated, any changes will be lost
+const framer_1 = __webpack_require__(/*! framer */ "framer");
+const canvas = framer_1.CanvasStore.shared({"children":[]});
+
+
+/***/ }),
+
+/***/ "./node_modules/reactn/build/add-callback.js":
+/*!***************************************************!*\
+  !*** ./node_modules/reactn/build/add-callback.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+function _addCallback(globalStateManager, callback) {
+    return globalStateManager.addCallback(callback);
+}
+exports.default = _addCallback;
+;
+
+
+/***/ }),
+
+/***/ "./node_modules/reactn/build/add-reducer.js":
+/*!**************************************************!*\
+  !*** ./node_modules/reactn/build/add-reducer.js ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+function _addReducer(globalStateManager, name, reducer) {
+    return globalStateManager.addReducer(name, reducer);
+}
+exports.default = _addReducer;
+;
+
+
+/***/ }),
+
+/***/ "./node_modules/reactn/build/add-reducers.js":
+/*!***************************************************!*\
+  !*** ./node_modules/reactn/build/add-reducers.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __values = (this && this.__values) || function (o) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator], i = 0;
+    if (m) return m.call(o);
+    return {
+        next: function () {
+            if (o && i >= o.length) o = void 0;
+            return { value: o && o[i++], done: !o };
+        }
+    };
+};
+var __read = (this && this.__read) || function (o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        }
+        finally { if (e) throw e.error; }
+    }
+    return ar;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var add_reducer_1 = __webpack_require__(/*! ./add-reducer */ "./node_modules/reactn/build/add-reducer.js");
+function _addReducers(globalStateManager, reducers) {
+    var e_1, _a;
+    var removeReducers = new Set();
+    try {
+        for (var _b = __values(Object.entries(reducers)), _c = _b.next(); !_c.done; _c = _b.next()) {
+            var _d = __read(_c.value, 2), name = _d[0], reducer = _d[1];
+            removeReducers.add(add_reducer_1.default(globalStateManager, name, reducer));
+        }
+    }
+    catch (e_1_1) { e_1 = { error: e_1_1 }; }
+    finally {
+        try {
+            if (_c && !_c.done && (_a = _b.return)) _a.call(_b);
+        }
+        finally { if (e_1) throw e_1.error; }
+    }
+    return function () {
+        var e_2, _a;
+        var success = true;
+        try {
+            for (var removeReducers_1 = __values(removeReducers), removeReducers_1_1 = removeReducers_1.next(); !removeReducers_1_1.done; removeReducers_1_1 = removeReducers_1.next()) {
+                var removeReducer = removeReducers_1_1.value;
+                success = success && removeReducer();
+            }
+        }
+        catch (e_2_1) { e_2 = { error: e_2_1 }; }
+        finally {
+            try {
+                if (removeReducers_1_1 && !removeReducers_1_1.done && (_a = removeReducers_1.return)) _a.call(removeReducers_1);
+            }
+            finally { if (e_2) throw e_2.error; }
+        }
+        return success;
+    };
+}
+exports.default = _addReducers;
+;
+
+
+/***/ }),
+
+/***/ "./node_modules/reactn/build/components.js":
+/*!*************************************************!*\
+  !*** ./node_modules/reactn/build/components.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __webpack_require__(/*! react */ "react");
+var methods_1 = __webpack_require__(/*! ./methods */ "./node_modules/reactn/build/methods.js");
+var bind_lifecycle_methods_1 = __webpack_require__(/*! ./utils/bind-lifecycle-methods */ "./node_modules/reactn/build/utils/bind-lifecycle-methods.js");
+var isComponentDidMount = false;
+var isComponentDidUpdate = false;
+var isSetGlobalCallback = false;
+var ReactNComponent = (function (_super) {
+    __extends(ReactNComponent, _super);
+    function ReactNComponent(props, context) {
+        var _this = _super.call(this, props, context) || this;
+        _this._globalCallback = _this._globalCallback.bind(_this);
+        bind_lifecycle_methods_1.default(_this);
+        return _this;
+    }
+    Object.defineProperty(ReactNComponent.prototype, "dispatch", {
+        get: function () {
+            return methods_1.ReactNDispatch();
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ReactNComponent.prototype, "global", {
+        get: function () {
+            return methods_1.ReactNGlobal(this);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    ReactNComponent.prototype.setGlobal = function (newGlobalState, callback) {
+        if (callback === void 0) { callback = null; }
+        return methods_1.ReactNSetGlobal(newGlobalState, callback, !isComponentDidMount &&
+            !isComponentDidUpdate &&
+            !isSetGlobalCallback);
+    };
+    ReactNComponent.prototype._globalCallback = function () {
+        return methods_1.ReactNGlobalCallback(this);
+    };
+    return ReactNComponent;
+}(react_1.Component));
+exports.ReactNComponent = ReactNComponent;
+;
+var ReactNPureComponent = (function (_super) {
+    __extends(ReactNPureComponent, _super);
+    function ReactNPureComponent(props, context) {
+        var _this = _super.call(this, props, context) || this;
+        _this._globalCallback = _this._globalCallback.bind(_this);
+        bind_lifecycle_methods_1.default(_this);
+        return _this;
+    }
+    Object.defineProperty(ReactNPureComponent.prototype, "dispatch", {
+        get: function () {
+            return methods_1.ReactNDispatch();
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ReactNPureComponent.prototype, "global", {
+        get: function () {
+            return methods_1.ReactNGlobal(this);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    ReactNPureComponent.prototype.setGlobal = function (newGlobalState, callback) {
+        if (callback === void 0) { callback = null; }
+        return methods_1.ReactNSetGlobal(newGlobalState, callback, !isComponentDidMount &&
+            !isComponentDidUpdate &&
+            !isSetGlobalCallback);
+    };
+    ReactNPureComponent.prototype._globalCallback = function () {
+        return methods_1.ReactNGlobalCallback(this);
+    };
+    return ReactNPureComponent;
+}(react_1.PureComponent));
+exports.ReactNPureComponent = ReactNPureComponent;
+;
+
+
+/***/ }),
+
+/***/ "./node_modules/reactn/build/context.js":
+/*!**********************************************!*\
+  !*** ./node_modules/reactn/build/context.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __webpack_require__(/*! react */ "react");
+var default_global_state_manager_1 = __webpack_require__(/*! ./default-global-state-manager */ "./node_modules/reactn/build/default-global-state-manager.js");
+var getContext = function () {
+    if (typeof react_1.createContext === 'function') {
+        return react_1.createContext(default_global_state_manager_1.default);
+    }
+    return null;
+};
+exports.default = getContext();
+
+
+/***/ }),
+
+/***/ "./node_modules/reactn/build/create-provider.js":
+/*!******************************************************!*\
+  !*** ./node_modules/reactn/build/create-provider.js ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "react");
+var context_1 = __webpack_require__(/*! ./context */ "./node_modules/reactn/build/context.js");
+var add_reducer_1 = __webpack_require__(/*! ./add-reducer */ "./node_modules/reactn/build/add-reducer.js");
+var add_reducers_1 = __webpack_require__(/*! ./add-reducers */ "./node_modules/reactn/build/add-reducers.js");
+var global_state_manager_1 = __webpack_require__(/*! ./global-state-manager */ "./node_modules/reactn/build/global-state-manager.js");
+var set_global_1 = __webpack_require__(/*! ./set-global */ "./node_modules/reactn/build/set-global.js");
+var use_dispatch_1 = __webpack_require__(/*! ./use-dispatch */ "./node_modules/reactn/build/use-dispatch.js");
+var use_global_1 = __webpack_require__(/*! ./use-global */ "./node_modules/reactn/build/use-global.js");
+var is_property_reducer_1 = __webpack_require__(/*! ./utils/is-property-reducer */ "./node_modules/reactn/build/utils/is-property-reducer.js");
+var react_context_error_1 = __webpack_require__(/*! ./utils/react-context-error */ "./node_modules/reactn/build/utils/react-context-error.js");
+var with_global_1 = __webpack_require__(/*! ./with-global */ "./node_modules/reactn/build/with-global.js");
+function _createProvider(initialState, initialReducers) {
+    if (initialState === void 0) { initialState = Object.create(null); }
+    if (initialReducers === void 0) { initialReducers = Object.create(null); }
+    if (context_1.default === null) {
+        throw react_context_error_1.default;
+    }
+    var globalStateManager = new global_state_manager_1.default(initialState, initialReducers);
+    return (function (_super) {
+        __extends(ReactNProvider, _super);
+        function ReactNProvider() {
+            return _super !== null && _super.apply(this, arguments) || this;
+        }
+        ReactNProvider.addCallback = function (f) {
+            return globalStateManager.addCallback(f);
+        };
+        ReactNProvider.addReducer = function (name, reducer) {
+            return add_reducer_1.default(globalStateManager, name, reducer);
+        };
+        ReactNProvider.addReducers = function (reducers) {
+            return add_reducers_1.default(globalStateManager, reducers);
+        };
+        Object.defineProperty(ReactNProvider, "dispatch", {
+            get: function () {
+                return globalStateManager.dispatchers;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        ReactNProvider.getDispatch = function () {
+            return globalStateManager.dispatchers;
+        };
+        ReactNProvider.getGlobal = function () {
+            return globalStateManager.state;
+        };
+        Object.defineProperty(ReactNProvider, "global", {
+            get: function () {
+                return globalStateManager.state;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        ReactNProvider.removeCallback = function (callback) {
+            return globalStateManager.removeCallback(callback);
+        };
+        ReactNProvider.reset = function () {
+            return globalStateManager.reset();
+        };
+        ReactNProvider.setGlobal = function (newGlobalState, callback) {
+            if (callback === void 0) { callback = null; }
+            return set_global_1.default(globalStateManager, newGlobalState, callback);
+        };
+        ReactNProvider.useDispatch = function (reducer, property) {
+            if (typeof reducer === 'function') {
+                if (is_property_reducer_1.default(reducer, property)) {
+                    return use_dispatch_1.default(globalStateManager, reducer, property);
+                }
+                return use_dispatch_1.default(globalStateManager, reducer);
+            }
+            return use_dispatch_1.default(globalStateManager, reducer);
+        };
+        ReactNProvider.useGlobal = function (property) {
+            return use_global_1.default(globalStateManager, property);
+        };
+        ReactNProvider.withGlobal = function (getter, setter) {
+            if (getter === void 0) { getter = function (global) { return global; }; }
+            if (setter === void 0) { setter = function () { return null; }; }
+            return with_global_1.default(globalStateManager, getter, setter);
+        };
+        ReactNProvider.prototype.render = function () {
+            return (React.createElement(context_1.default.Provider, { value: globalStateManager }, this.props.children));
+        };
+        return ReactNProvider;
+    }(React.Component));
+}
+exports.default = _createProvider;
+
+
+/***/ }),
+
+/***/ "./node_modules/reactn/build/decorator.js":
+/*!************************************************!*\
+  !*** ./node_modules/reactn/build/decorator.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __read = (this && this.__read) || function (o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        }
+        finally { if (e) throw e.error; }
+    }
+    return ar;
+};
+var __spread = (this && this.__spread) || function () {
+    for (var ar = [], i = 0; i < arguments.length; i++) ar = ar.concat(__read(arguments[i]));
+    return ar;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var methods_1 = __webpack_require__(/*! ./methods */ "./node_modules/reactn/build/methods.js");
+var isComponentDidMount = false;
+var isComponentDidUpdate = false;
+var isSetGlobalCallback = false;
+var componentName = function (DecoratedComponent) {
+    return typeof DecoratedComponent === 'string' ?
+        DecoratedComponent :
+        DecoratedComponent.displayName ||
+            DecoratedComponent.name;
+};
+function ReactN(DecoratedComponent) {
+    var DecoratedReactNComponent = (function (_super) {
+        __extends(DecoratedReactNComponent, _super);
+        function DecoratedReactNComponent(props, context) {
+            var _this = _super.call(this, props, context) || this;
+            _this._globalCallback = _this._globalCallback.bind(_this);
+            return _this;
+        }
+        DecoratedReactNComponent.prototype.componentWillUnmount = function () {
+            methods_1.ReactNComponentWillUnmount(this);
+            if (_super.prototype.componentWillUnmount) {
+                _super.prototype.componentWillUnmount.call(this);
+            }
+        };
+        DecoratedReactNComponent.prototype.componentWillUpdate = function () {
+            var args = [];
+            for (var _i = 0; _i < arguments.length; _i++) {
+                args[_i] = arguments[_i];
+            }
+            methods_1.ReactNComponentWillUpdate(this);
+            if (_super.prototype.componentWillUpdate) {
+                _super.prototype.componentWillUpdate.apply(this, __spread(args));
+            }
+        };
+        Object.defineProperty(DecoratedReactNComponent.prototype, "dispatch", {
+            get: function () {
+                return methods_1.ReactNDispatch();
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(DecoratedReactNComponent.prototype, "global", {
+            get: function () {
+                return methods_1.ReactNGlobal(this);
+            },
+            enumerable: true,
+            configurable: true
+        });
+        DecoratedReactNComponent.prototype.setGlobal = function (newGlobalState, callback) {
+            if (callback === void 0) { callback = null; }
+            return methods_1.ReactNSetGlobal(newGlobalState, callback, !isComponentDidMount &&
+                !isComponentDidUpdate &&
+                !isSetGlobalCallback);
+        };
+        DecoratedReactNComponent.prototype._globalCallback = function () {
+            return methods_1.ReactNGlobalCallback(this);
+        };
+        DecoratedReactNComponent.displayName = componentName(DecoratedComponent) + "-ReactN";
+        return DecoratedReactNComponent;
+    }(DecoratedComponent));
+    return DecoratedReactNComponent;
+}
+exports.default = ReactN;
+;
+
+
+/***/ }),
+
+/***/ "./node_modules/reactn/build/default-global-state-manager.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/reactn/build/default-global-state-manager.js ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var global_state_manager_1 = __webpack_require__(/*! ./global-state-manager */ "./node_modules/reactn/build/global-state-manager.js");
+exports.default = new global_state_manager_1.default();
+
+
+/***/ }),
+
+/***/ "./node_modules/reactn/build/get-dispatch.js":
+/*!***************************************************!*\
+  !*** ./node_modules/reactn/build/get-dispatch.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+function _getDispatch(globalStateManager) {
+    return globalStateManager.dispatchers;
+}
+exports.default = _getDispatch;
+;
+
+
+/***/ }),
+
+/***/ "./node_modules/reactn/build/get-global.js":
+/*!*************************************************!*\
+  !*** ./node_modules/reactn/build/get-global.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+function _getGlobal(globalStateManager) {
+    return globalStateManager.state;
+}
+exports.default = _getGlobal;
+;
+
+
+/***/ }),
+
+/***/ "./node_modules/reactn/build/global-state-manager.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/reactn/build/global-state-manager.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __values = (this && this.__values) || function (o) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator], i = 0;
+    if (m) return m.call(o);
+    return {
+        next: function () {
+            if (o && i >= o.length) o = void 0;
+            return { value: o && o[i++], done: !o };
+        }
+    };
+};
+var __read = (this && this.__read) || function (o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        }
+        finally { if (e) throw e.error; }
+    }
+    return ar;
+};
+var __spread = (this && this.__spread) || function () {
+    for (var ar = [], i = 0; i < arguments.length; i++) ar = ar.concat(__read(arguments[i]));
+    return ar;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var object_get_listener_1 = __webpack_require__(/*! ./utils/object-get-listener */ "./node_modules/reactn/build/utils/object-get-listener.js");
+var copyObject = function (obj) {
+    return Object.assign(Object.create(null), obj);
+};
+exports.INVALID_NEW_GLOBAL_STATE = new Error('ReactN global state must be a function, null, object, or Promise.');
+var GlobalStateManager = (function () {
+    function GlobalStateManager(initialState, initialReducers) {
+        if (initialState === void 0) { initialState = Object.create(null); }
+        if (initialReducers === void 0) { initialReducers = Object.create(null); }
+        this._callbacks = new Set();
+        this._dispatchers = Object.create(null);
+        this._middlewares = new Set();
+        this._propertyListeners = new Map();
+        this._queue = new Map();
+        this._initialReducers = copyObject(initialReducers);
+        this._initialState = copyObject(initialState);
+        this._state = copyObject(initialState);
+        this.addReducers(initialReducers);
+    }
+    GlobalStateManager.prototype.addCallback = function (callback) {
+        var _this = this;
+        this._callbacks.add(callback);
+        return function () {
+            return _this.removeCallback(callback);
+        };
+    };
+    GlobalStateManager.prototype.addMiddleware = function (createMiddleware) {
+        var _this = this;
+        var middleware = createMiddleware(this.state, this.dispatchers);
+        this._middlewares.add(middleware);
+        return function () {
+            return _this.removeMiddleware(middleware);
+        };
+    };
+    GlobalStateManager.prototype.addPropertyListener = function (property, propertyListener) {
+        if (this.propertyListeners.has(property)) {
+            this.propertyListeners.get(property).add(propertyListener);
+        }
+        else {
+            this.propertyListeners.set(property, new Set([propertyListener]));
+        }
+    };
+    GlobalStateManager.prototype.addReducer = function (name, reducer) {
+        var _this = this;
+        this._dispatchers[name] = this.createDispatcher(reducer, name);
+        return function () {
+            return _this.removeDispatcher(name);
+        };
+    };
+    GlobalStateManager.prototype.addReducers = function (reducers) {
+        var e_1, _a;
+        try {
+            for (var _b = __values(Object.entries(reducers)), _c = _b.next(); !_c.done; _c = _b.next()) {
+                var _d = __read(_c.value, 2), name = _d[0], reducer = _d[1];
+                this.addReducer(name, reducer);
+            }
+        }
+        catch (e_1_1) { e_1 = { error: e_1_1 }; }
+        finally {
+            try {
+                if (_c && !_c.done && (_a = _b.return)) _a.call(_b);
+            }
+            finally { if (e_1) throw e_1.error; }
+        }
+    };
+    GlobalStateManager.prototype.clearQueue = function () {
+        return this.queue.clear();
+    };
+    GlobalStateManager.prototype.createDispatcher = function (reducer, name) {
+        var _this = this;
+        if (name === void 0) { name = reducer.name; }
+        return function () {
+            var args = [];
+            for (var _i = 0; _i < arguments.length; _i++) {
+                args[_i] = arguments[_i];
+            }
+            return _this.set(reducer.apply(void 0, __spread([_this.state, _this.dispatchers], args)), name, args)
+                .then(function () { return _this.state; });
+        };
+    };
+    Object.defineProperty(GlobalStateManager.prototype, "dispatchers", {
+        get: function () {
+            return copyObject(this._dispatchers);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    GlobalStateManager.prototype.enqueue = function (property, value) {
+        this._queue.set(property, value);
+    };
+    GlobalStateManager.prototype.flush = function (reducerName, reducerArgs) {
+        var e_2, _a, e_3, _b, e_4, _c, e_5, _d;
+        var propertyListeners = new Set();
+        var stateChange = Object.create(null);
+        this.queue.forEach(function (value, key) {
+            stateChange[key] = value;
+        });
+        try {
+            for (var _e = __values(this.queue.entries()), _f = _e.next(); !_f.done; _f = _e.next()) {
+                var _g = __read(_f.value, 2), property = _g[0], value = _g[1];
+                this._state[property] = value;
+                if (this.propertyListeners.has(property)) {
+                    try {
+                        for (var _h = (e_3 = void 0, __values(this.propertyListeners.get(property))), _j = _h.next(); !_j.done; _j = _h.next()) {
+                            var propertyListener = _j.value;
+                            propertyListeners.add(propertyListener);
+                        }
+                    }
+                    catch (e_3_1) { e_3 = { error: e_3_1 }; }
+                    finally {
+                        try {
+                            if (_j && !_j.done && (_b = _h.return)) _b.call(_h);
+                        }
+                        finally { if (e_3) throw e_3.error; }
+                    }
+                }
+            }
+        }
+        catch (e_2_1) { e_2 = { error: e_2_1 }; }
+        finally {
+            try {
+                if (_f && !_f.done && (_a = _e.return)) _a.call(_e);
+            }
+            finally { if (e_2) throw e_2.error; }
+        }
+        this.clearQueue();
+        try {
+            for (var propertyListeners_1 = __values(propertyListeners), propertyListeners_1_1 = propertyListeners_1.next(); !propertyListeners_1_1.done; propertyListeners_1_1 = propertyListeners_1.next()) {
+                var propertyListener = propertyListeners_1_1.value;
+                propertyListener();
+            }
+        }
+        catch (e_4_1) { e_4 = { error: e_4_1 }; }
+        finally {
+            try {
+                if (propertyListeners_1_1 && !propertyListeners_1_1.done && (_c = propertyListeners_1.return)) _c.call(propertyListeners_1);
+            }
+            finally { if (e_4) throw e_4.error; }
+        }
+        try {
+            for (var _k = __values(this._callbacks), _l = _k.next(); !_l.done; _l = _k.next()) {
+                var callback = _l.value;
+                this.set(callback(this.state, this.dispatchers, stateChange, reducerName, reducerArgs));
+            }
+        }
+        catch (e_5_1) { e_5 = { error: e_5_1 }; }
+        finally {
+            try {
+                if (_l && !_l.done && (_d = _k.return)) _d.call(_k);
+            }
+            finally { if (e_5) throw e_5.error; }
+        }
+        return stateChange;
+    };
+    GlobalStateManager.prototype.getDispatcher = function (name) {
+        if (this.hasDispatcher(name)) {
+            return this._dispatchers[name];
+        }
+        throw new Error("Cannot return unknown ReactN reducer `" + name + "`.");
+    };
+    GlobalStateManager.prototype.hasCallback = function (callback) {
+        return this._callbacks.has(callback);
+    };
+    GlobalStateManager.prototype.hasMiddleware = function (middleware) {
+        return this._middlewares.has(middleware);
+    };
+    GlobalStateManager.prototype.hasPropertyListener = function (pl) {
+        var e_6, _a, e_7, _b;
+        try {
+            for (var _c = __values(this.propertyListeners.values()), _d = _c.next(); !_d.done; _d = _c.next()) {
+                var propertyListeners = _d.value;
+                try {
+                    for (var propertyListeners_2 = (e_7 = void 0, __values(propertyListeners)), propertyListeners_2_1 = propertyListeners_2.next(); !propertyListeners_2_1.done; propertyListeners_2_1 = propertyListeners_2.next()) {
+                        var propertyListener = propertyListeners_2_1.value;
+                        if (propertyListener === pl) {
+                            return true;
+                        }
+                    }
+                }
+                catch (e_7_1) { e_7 = { error: e_7_1 }; }
+                finally {
+                    try {
+                        if (propertyListeners_2_1 && !propertyListeners_2_1.done && (_b = propertyListeners_2.return)) _b.call(propertyListeners_2);
+                    }
+                    finally { if (e_7) throw e_7.error; }
+                }
+            }
+        }
+        catch (e_6_1) { e_6 = { error: e_6_1 }; }
+        finally {
+            try {
+                if (_d && !_d.done && (_a = _c.return)) _a.call(_c);
+            }
+            finally { if (e_6) throw e_6.error; }
+        }
+        return false;
+    };
+    GlobalStateManager.prototype.hasDispatcher = function (name) {
+        return Object.prototype.hasOwnProperty.call(this._dispatchers, name);
+    };
+    Object.defineProperty(GlobalStateManager.prototype, "queue", {
+        get: function () {
+            return this._queue;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(GlobalStateManager.prototype, "propertyListeners", {
+        get: function () {
+            return this._propertyListeners;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    GlobalStateManager.prototype.removeCallback = function (callback) {
+        return this._callbacks.delete(callback);
+    };
+    GlobalStateManager.prototype.removeDispatcher = function (name) {
+        if (this.hasDispatcher(name)) {
+            delete this._dispatchers[name];
+            return true;
+        }
+        return false;
+    };
+    GlobalStateManager.prototype.removeMiddleware = function (middleware) {
+        return this._middlewares.delete(middleware);
+    };
+    GlobalStateManager.prototype.removePropertyListener = function (propertyListener) {
+        var e_8, _a;
+        var removed = false;
+        try {
+            for (var _b = __values(this.propertyListeners.values()), _c = _b.next(); !_c.done; _c = _b.next()) {
+                var propertyListeners = _c.value;
+                if (propertyListeners.delete(propertyListener)) {
+                    removed = true;
+                }
+            }
+        }
+        catch (e_8_1) { e_8 = { error: e_8_1 }; }
+        finally {
+            try {
+                if (_c && !_c.done && (_a = _b.return)) _a.call(_b);
+            }
+            finally { if (e_8) throw e_8.error; }
+        }
+        return removed;
+    };
+    GlobalStateManager.prototype.reset = function () {
+        this._callbacks.clear();
+        this._dispatchers = Object.create(null);
+        this._middlewares.clear();
+        this._propertyListeners.clear();
+        this._queue.clear();
+        this.addReducers(this._initialReducers);
+        this._state = copyObject(this._initialState);
+    };
+    GlobalStateManager.prototype.set = function (newGlobalState, reducerName, reducerArgs) {
+        if (newGlobalState === null ||
+            typeof newGlobalState === 'undefined') {
+            return Promise.resolve(Object.create(null));
+        }
+        if (newGlobalState instanceof Promise) {
+            return this.setPromise(newGlobalState, reducerName, reducerArgs);
+        }
+        if (typeof newGlobalState === 'function') {
+            return this.setFunction(newGlobalState, reducerName, reducerArgs);
+        }
+        if (typeof newGlobalState === 'object') {
+            return this.setObject(newGlobalState, reducerName, reducerArgs);
+        }
+        throw exports.INVALID_NEW_GLOBAL_STATE;
+    };
+    GlobalStateManager.prototype.setFunction = function (f, reducerName, reducerArgs) {
+        return this.set(f(this.state, reducerName, reducerArgs), reducerName, reducerArgs);
+    };
+    GlobalStateManager.prototype.setObject = function (obj, reducerName, reducerArgs) {
+        var e_9, _a;
+        var properties = Object.keys(obj);
+        try {
+            for (var properties_1 = __values(properties), properties_1_1 = properties_1.next(); !properties_1_1.done; properties_1_1 = properties_1.next()) {
+                var property = properties_1_1.value;
+                var value = obj[property];
+                this.enqueue(property, value);
+            }
+        }
+        catch (e_9_1) { e_9 = { error: e_9_1 }; }
+        finally {
+            try {
+                if (properties_1_1 && !properties_1_1.done && (_a = properties_1.return)) _a.call(properties_1);
+            }
+            finally { if (e_9) throw e_9.error; }
+        }
+        var stateChange = this.flush(reducerName, reducerArgs);
+        return Promise.resolve(stateChange);
+    };
+    GlobalStateManager.prototype.setPromise = function (promise, reducerName, reducerArgs) {
+        var _this = this;
+        return promise
+            .then(function (result) {
+            return _this.set(result, reducerName, reducerArgs);
+        });
+    };
+    GlobalStateManager.prototype.spyState = function (propertyListener) {
+        var _this = this;
+        return object_get_listener_1.default(this._state, function (property) {
+            _this.addPropertyListener(property, propertyListener);
+        });
+    };
+    Object.defineProperty(GlobalStateManager.prototype, "state", {
+        get: function () {
+            return copyObject(this._state);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return GlobalStateManager;
+}());
+exports.default = GlobalStateManager;
+;
+
+
+/***/ }),
+
+/***/ "./node_modules/reactn/build/index.js":
+/*!********************************************!*\
+  !*** ./node_modules/reactn/build/index.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var components_1 = __webpack_require__(/*! ./components */ "./node_modules/reactn/build/components.js");
+var add_callback_1 = __webpack_require__(/*! ./add-callback */ "./node_modules/reactn/build/add-callback.js");
+var add_reducer_1 = __webpack_require__(/*! ./add-reducer */ "./node_modules/reactn/build/add-reducer.js");
+var add_reducers_1 = __webpack_require__(/*! ./add-reducers */ "./node_modules/reactn/build/add-reducers.js");
+var create_provider_1 = __webpack_require__(/*! ./create-provider */ "./node_modules/reactn/build/create-provider.js");
+var decorator_1 = __webpack_require__(/*! ./decorator */ "./node_modules/reactn/build/decorator.js");
+var default_global_state_manager_1 = __webpack_require__(/*! ./default-global-state-manager */ "./node_modules/reactn/build/default-global-state-manager.js");
+var get_dispatch_1 = __webpack_require__(/*! ./get-dispatch */ "./node_modules/reactn/build/get-dispatch.js");
+var get_global_1 = __webpack_require__(/*! ./get-global */ "./node_modules/reactn/build/get-global.js");
+var remove_callback_1 = __webpack_require__(/*! ./remove-callback */ "./node_modules/reactn/build/remove-callback.js");
+var reset_global_1 = __webpack_require__(/*! ./reset-global */ "./node_modules/reactn/build/reset-global.js");
+var set_global_1 = __webpack_require__(/*! ./set-global */ "./node_modules/reactn/build/set-global.js");
+var use_dispatch_1 = __webpack_require__(/*! ./use-dispatch */ "./node_modules/reactn/build/use-dispatch.js");
+var use_global_1 = __webpack_require__(/*! ./use-global */ "./node_modules/reactn/build/use-global.js");
+var with_global_1 = __webpack_require__(/*! ./with-global */ "./node_modules/reactn/build/with-global.js");
+var React = __webpack_require__(/*! react */ "react");
+module.exports = Object.assign(decorator_1.default, React, {
+    addCallback: add_callback_1.default.bind(null, default_global_state_manager_1.default),
+    addReducer: add_reducer_1.default.bind(null, default_global_state_manager_1.default),
+    addReducers: add_reducers_1.default.bind(null, default_global_state_manager_1.default),
+    Component: components_1.ReactNComponent,
+    createProvider: create_provider_1.default,
+    default: decorator_1.default,
+    getDispatch: get_dispatch_1.default.bind(null, default_global_state_manager_1.default),
+    getGlobal: get_global_1.default.bind(null, default_global_state_manager_1.default),
+    PureComponent: components_1.ReactNPureComponent,
+    removeCallback: remove_callback_1.default.bind(null, default_global_state_manager_1.default),
+    resetGlobal: reset_global_1.default.bind(null, default_global_state_manager_1.default),
+    setGlobal: set_global_1.default.bind(null, default_global_state_manager_1.default),
+    useDispatch: use_dispatch_1.default.bind(null, null),
+    useGlobal: use_global_1.default.bind(null, null),
+    withGlobal: with_global_1.default.bind(null, null),
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/reactn/build/methods.js":
+/*!**********************************************!*\
+  !*** ./node_modules/reactn/build/methods.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var context_1 = __webpack_require__(/*! ./context */ "./node_modules/reactn/build/context.js");
+var default_global_state_manager_1 = __webpack_require__(/*! ./default-global-state-manager */ "./node_modules/reactn/build/default-global-state-manager.js");
+var set_global_1 = __webpack_require__(/*! ./set-global */ "./node_modules/reactn/build/set-global.js");
+var getGlobalStateManager = function () {
+    return context_1.default &&
+        context_1.default._currentValue2 ||
+        default_global_state_manager_1.default;
+};
+function ReactNComponentWillUnmount(that) {
+    getGlobalStateManager().removePropertyListener(that._globalCallback);
+}
+exports.ReactNComponentWillUnmount = ReactNComponentWillUnmount;
+function ReactNComponentWillUpdate(that) {
+    getGlobalStateManager().removePropertyListener(that._globalCallback);
+}
+exports.ReactNComponentWillUpdate = ReactNComponentWillUpdate;
+function ReactNDispatch() {
+    return getGlobalStateManager().dispatchers;
+}
+exports.ReactNDispatch = ReactNDispatch;
+function ReactNGlobalCallback(that) {
+    that.updater.enqueueForceUpdate(that, null, 'forceUpdate');
+}
+exports.ReactNGlobalCallback = ReactNGlobalCallback;
+function ReactNGlobal(that, globalStateManager) {
+    if (globalStateManager === void 0) { globalStateManager = getGlobalStateManager(); }
+    return globalStateManager.spyState(that._globalCallback);
+}
+exports.ReactNGlobal = ReactNGlobal;
+function ReactNSetGlobal(newGlobalState, callback, _sync, globalStateManager) {
+    if (globalStateManager === void 0) { globalStateManager = getGlobalStateManager(); }
+    return set_global_1.default(globalStateManager, newGlobalState, callback);
+}
+exports.ReactNSetGlobal = ReactNSetGlobal;
+
+
+/***/ }),
+
+/***/ "./node_modules/reactn/build/remove-callback.js":
+/*!******************************************************!*\
+  !*** ./node_modules/reactn/build/remove-callback.js ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+function _removeCallback(globalStateManager, callback) {
+    return globalStateManager.removeCallback(callback);
+}
+exports.default = _removeCallback;
+;
+
+
+/***/ }),
+
+/***/ "./node_modules/reactn/build/reset-global.js":
+/*!***************************************************!*\
+  !*** ./node_modules/reactn/build/reset-global.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+function _resetGlobal(globalStateManager) {
+    return globalStateManager.reset();
+}
+exports.default = _resetGlobal;
+;
+
+
+/***/ }),
+
+/***/ "./node_modules/reactn/build/set-global.js":
+/*!*************************************************!*\
+  !*** ./node_modules/reactn/build/set-global.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+function _setGlobal(globalStateManager, newGlobalState, callback) {
+    if (callback === void 0) { callback = null; }
+    if (callback === null) {
+        return globalStateManager.set(newGlobalState)
+            .then(function () {
+            return globalStateManager.state;
+        });
+    }
+    return globalStateManager.set(newGlobalState)
+        .then(function (stateChange) {
+        return _setGlobal(globalStateManager, callback(globalStateManager.state, globalStateManager.dispatchers, stateChange));
+    })
+        .then(function () {
+        return globalStateManager.state;
+    });
+}
+exports.default = _setGlobal;
+;
+
+
+/***/ }),
+
+/***/ "./node_modules/reactn/build/use-dispatch.js":
+/*!***************************************************!*\
+  !*** ./node_modules/reactn/build/use-dispatch.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __read = (this && this.__read) || function (o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        }
+        finally { if (e) throw e.error; }
+    }
+    return ar;
+};
+var __spread = (this && this.__spread) || function () {
+    for (var ar = [], i = 0; i < arguments.length; i++) ar = ar.concat(__read(arguments[i]));
+    return ar;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __webpack_require__(/*! react */ "react");
+var use_force_update_1 = __webpack_require__(/*! use-force-update */ "./node_modules/use-force-update/use-force-update.js");
+var context_1 = __webpack_require__(/*! ./context */ "./node_modules/reactn/build/context.js");
+var default_global_state_manager_1 = __webpack_require__(/*! ./default-global-state-manager */ "./node_modules/reactn/build/default-global-state-manager.js");
+var is_property_reducer_1 = __webpack_require__(/*! ./utils/is-property-reducer */ "./node_modules/reactn/build/utils/is-property-reducer.js");
+var react_hooks_error_1 = __webpack_require__(/*! ./utils/react-hooks-error */ "./node_modules/reactn/build/utils/react-hooks-error.js");
+function _useDispatch(overrideGlobalStateManager, reducer, property) {
+    if (!react_1.useContext) {
+        throw react_hooks_error_1.default;
+    }
+    var forceUpdate = use_force_update_1.default();
+    var globalStateManager = overrideGlobalStateManager ||
+        react_1.useContext(context_1.default) ||
+        default_global_state_manager_1.default;
+    if (typeof reducer === 'undefined') {
+        return globalStateManager.dispatchers;
+    }
+    if (typeof reducer === 'function') {
+        if (is_property_reducer_1.default(reducer, property)) {
+            var newReducer = function (global, _dispatch) {
+                var args = [];
+                for (var _i = 2; _i < arguments.length; _i++) {
+                    args[_i - 2] = arguments[_i];
+                }
+                var newGlobalState = Object.create(null);
+                newGlobalState[property] = reducer.apply(void 0, __spread([global[property]], args));
+                return newGlobalState;
+            };
+            var propertyDispatcher_1 = (globalStateManager.createDispatcher(newReducer, reducer.name));
+            Object.defineProperty(propertyDispatcher_1, 0, {
+                configurable: true,
+                enumerable: true,
+                get: function () {
+                    globalStateManager.addPropertyListener(property, forceUpdate);
+                    return globalStateManager.state[property];
+                },
+            });
+            propertyDispatcher_1[1] = propertyDispatcher_1;
+            var propertyDispatcherSlice = function (start, end) {
+                var values = [propertyDispatcher_1[0], propertyDispatcher_1[1]];
+                return values.slice.apply(values, [start, end]);
+            };
+            propertyDispatcher_1.slice = propertyDispatcherSlice;
+            var propertyDispatcherIterator = function () {
+                var _a;
+                var index = 0;
+                var propertyDispatcherIteratorNext = function () {
+                    if (index < 2) {
+                        return {
+                            done: false,
+                            value: propertyDispatcher_1[index++],
+                        };
+                    }
+                    index = 0;
+                    return {
+                        done: true,
+                        value: undefined,
+                    };
+                };
+                return _a = {},
+                    _a[Symbol.iterator] = propertyDispatcher_1[Symbol.iterator],
+                    _a.next = propertyDispatcherIteratorNext,
+                    _a;
+            };
+            propertyDispatcher_1[Symbol.iterator] = propertyDispatcherIterator;
+            return propertyDispatcher_1;
+        }
+        return globalStateManager.createDispatcher(reducer);
+    }
+    return globalStateManager.getDispatcher(reducer);
+}
+exports.default = _useDispatch;
+;
+
+
+/***/ }),
+
+/***/ "./node_modules/reactn/build/use-global.js":
+/*!*************************************************!*\
+  !*** ./node_modules/reactn/build/use-global.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __webpack_require__(/*! react */ "react");
+var use_force_update_1 = __webpack_require__(/*! use-force-update */ "./node_modules/use-force-update/use-force-update.js");
+var context_1 = __webpack_require__(/*! ./context */ "./node_modules/reactn/build/context.js");
+var default_global_state_manager_1 = __webpack_require__(/*! ./default-global-state-manager */ "./node_modules/reactn/build/default-global-state-manager.js");
+var set_global_1 = __webpack_require__(/*! ./set-global */ "./node_modules/reactn/build/set-global.js");
+var react_hooks_error_1 = __webpack_require__(/*! ./utils/react-hooks-error */ "./node_modules/reactn/build/utils/react-hooks-error.js");
+function _useGlobal(overrideGlobalStateManager, property) {
+    if (!react_1.useContext) {
+        throw react_hooks_error_1.default;
+    }
+    var globalStateManager = overrideGlobalStateManager ||
+        react_1.useContext(context_1.default) ||
+        default_global_state_manager_1.default;
+    var forceUpdate = use_force_update_1.default();
+    var removeForceUpdateListener = function () {
+        globalStateManager.removePropertyListener(forceUpdate);
+    };
+    if (typeof property === 'undefined') {
+        react_1.useEffect(function () { return removeForceUpdateListener; });
+        var globalStateSetter = function (newGlobalState, callback) {
+            if (callback === void 0) { callback = null; }
+            return set_global_1.default(globalStateManager, newGlobalState, callback);
+        };
+        return [
+            globalStateManager.spyState(forceUpdate),
+            globalStateSetter,
+        ];
+    }
+    react_1.useEffect(function () {
+        globalStateManager.addPropertyListener(property, forceUpdate);
+        return removeForceUpdateListener;
+    });
+    var globalPropertySetter = function (value, callback) {
+        if (callback === void 0) { callback = null; }
+        var newGlobalState = Object.create(null);
+        newGlobalState[property] = value;
+        return set_global_1.default(globalStateManager, newGlobalState, callback);
+    };
+    return [
+        globalStateManager.state[property],
+        globalPropertySetter,
+    ];
+}
+exports.default = _useGlobal;
+;
+
+
+/***/ }),
+
+/***/ "./node_modules/reactn/build/utils/bind-lifecycle-methods.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/reactn/build/utils/bind-lifecycle-methods.js ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var methods_1 = __webpack_require__(/*! ../methods */ "./node_modules/reactn/build/methods.js");
+var component_will_unmount_1 = __webpack_require__(/*! ./component-will-unmount */ "./node_modules/reactn/build/utils/component-will-unmount.js");
+var component_will_update_1 = __webpack_require__(/*! ./component-will-update */ "./node_modules/reactn/build/utils/component-will-update.js");
+function bindLifecycleMethods(that) {
+    if (!component_will_unmount_1.componentWillUnmountPrototype(that)) {
+        that.componentWillUnmount = function () {
+            methods_1.ReactNComponentWillUnmount(that);
+        };
+    }
+    if (!component_will_update_1.componentWillUpdatePrototype(that)) {
+        that.componentWillUpdate = function () {
+            methods_1.ReactNComponentWillUpdate(that);
+        };
+    }
+}
+exports.default = bindLifecycleMethods;
+;
+
+
+/***/ }),
+
+/***/ "./node_modules/reactn/build/utils/component-will-unmount.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/reactn/build/utils/component-will-unmount.js ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var methods_1 = __webpack_require__(/*! ../methods */ "./node_modules/reactn/build/methods.js");
+exports.componentWillUnmountPrototype = function (that) {
+    var proto = Object.getPrototypeOf(that);
+    if (Object.prototype.hasOwnProperty.call(proto, 'componentWillUnmount')) {
+        that.componentWillUnmount = function () {
+            methods_1.ReactNComponentWillUnmount(that);
+            proto.componentWillUnmount.bind(that)();
+        };
+        return true;
+    }
+    return false;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/reactn/build/utils/component-will-update.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/reactn/build/utils/component-will-update.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __read = (this && this.__read) || function (o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        }
+        finally { if (e) throw e.error; }
+    }
+    return ar;
+};
+var __spread = (this && this.__spread) || function () {
+    for (var ar = [], i = 0; i < arguments.length; i++) ar = ar.concat(__read(arguments[i]));
+    return ar;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var methods_1 = __webpack_require__(/*! ../methods */ "./node_modules/reactn/build/methods.js");
+exports.componentWillUpdatePrototype = function (that) {
+    var proto = Object.getPrototypeOf(that);
+    if (Object.prototype.hasOwnProperty.call(proto, 'componentWillUpdate')) {
+        that.componentWillUpdate = function () {
+            var args = [];
+            for (var _i = 0; _i < arguments.length; _i++) {
+                args[_i] = arguments[_i];
+            }
+            methods_1.ReactNComponentWillUpdate(that);
+            proto.componentWillUpdate.bind(that).apply(void 0, __spread(args));
+        };
+        return true;
+    }
+    return false;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/reactn/build/utils/is-property-reducer.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/reactn/build/utils/is-property-reducer.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+function isPropertyReducer(_reducer, property) {
+    return typeof property !== 'undefined';
+}
+exports.default = isPropertyReducer;
+;
+
+
+/***/ }),
+
+/***/ "./node_modules/reactn/build/utils/object-get-listener.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/reactn/build/utils/object-get-listener.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+function objectGetListener(obj, listener) {
+    return Object.keys(obj).reduce(function (accumulator, key) {
+        Object.defineProperty(accumulator, key, {
+            configurable: false,
+            enumerable: true,
+            get: function () {
+                listener(key);
+                return obj[key];
+            }
+        });
+        return accumulator;
+    }, Object.create(null));
+}
+exports.default = objectGetListener;
+;
+
+
+/***/ }),
+
+/***/ "./node_modules/reactn/build/utils/react-context-error.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/reactn/build/utils/react-context-error.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = new Error('The installed version of React does not support Context. ' +
+    'Upgrade to React v16.3.0 or later.');
+
+
+/***/ }),
+
+/***/ "./node_modules/reactn/build/utils/react-hooks-error.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/reactn/build/utils/react-hooks-error.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = new Error('The installed version of React does not support Hooks. ' +
+    'Upgrade to React v16.8.0 or later.');
+
+
+/***/ }),
+
+/***/ "./node_modules/reactn/build/with-global.js":
+/*!**************************************************!*\
+  !*** ./node_modules/reactn/build/with-global.js ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(/*! react */ "react");
+var components_1 = __webpack_require__(/*! ./components */ "./node_modules/reactn/build/components.js");
+var context_1 = __webpack_require__(/*! ./context */ "./node_modules/reactn/build/context.js");
+var default_global_state_manager_1 = __webpack_require__(/*! ./default-global-state-manager */ "./node_modules/reactn/build/default-global-state-manager.js");
+var global_state_manager_1 = __webpack_require__(/*! ./global-state-manager */ "./node_modules/reactn/build/global-state-manager.js");
+var methods_1 = __webpack_require__(/*! ./methods */ "./node_modules/reactn/build/methods.js");
+var componentName = function (Component) {
+    return typeof Component === 'string' ?
+        Component :
+        Component.displayName ||
+            Component.name;
+};
+var isComponentDidMount = false;
+var isComponentDidUpdate = false;
+var isSetGlobalCallback = false;
+function _withGlobal(globalStateManager, getter, setter) {
+    if (globalStateManager === void 0) { globalStateManager = null; }
+    if (getter === void 0) { getter = function (global) { return global; }; }
+    if (setter === void 0) { setter = function () { return null; }; }
+    return function ReactNWithGlobal(Component) {
+        var _a;
+        return _a = (function (_super) {
+                __extends(ReactNHOC, _super);
+                function ReactNHOC() {
+                    var _this = _super !== null && _super.apply(this, arguments) || this;
+                    _this.setGlobal = function (newGlobalState, callback) {
+                        if (callback === void 0) { callback = null; }
+                        return methods_1.ReactNSetGlobal(newGlobalState, callback, !isComponentDidMount &&
+                            !isComponentDidUpdate &&
+                            !isSetGlobalCallback, _this.globalStateManager);
+                    };
+                    return _this;
+                }
+                Object.defineProperty(ReactNHOC.prototype, "dispatch", {
+                    get: function () {
+                        return this.globalStateManager.dispatchers;
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(ReactNHOC.prototype, "global", {
+                    get: function () {
+                        return methods_1.ReactNGlobal(this, this.globalStateManager);
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(ReactNHOC.prototype, "globalStateManager", {
+                    get: function () {
+                        if (globalStateManager) {
+                            return globalStateManager;
+                        }
+                        if (this.context instanceof global_state_manager_1.default) {
+                            return this.context;
+                        }
+                        return default_global_state_manager_1.default;
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                ReactNHOC.prototype.render = function () {
+                    var lowerOrderProps = __assign({}, this.props, getter(this.global, this.dispatch, this.props), setter(this.setGlobal, this.dispatch, this.props));
+                    return React.createElement(Component, __assign({}, lowerOrderProps));
+                };
+                return ReactNHOC;
+            }(components_1.ReactNComponent)),
+            _a.contextType = context_1.default,
+            _a.displayName = componentName(Component) + "-ReactN",
+            _a;
+    };
+}
+exports.default = _withGlobal;
+;
+
+
+/***/ }),
+
+/***/ "./node_modules/use-force-update/use-force-update.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/use-force-update/use-force-update.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __read = (this && this.__read) || function (o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        }
+        finally { if (e) throw e.error; }
+    }
+    return ar;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __webpack_require__(/*! react */ "react");
+var reducer = function (state, _action) { return !state; };
+var useForceUpdate = function () {
+    var _a = __read(react_1.useReducer(reducer, true), 2), dispatch = _a[1];
+    var memoizedDispatch = react_1.useCallback(function () {
+        dispatch(null);
+    }, [dispatch]);
+    return memoizedDispatch;
+};
+exports.default = useForceUpdate;
+
+
+/***/ }),
+
+/***/ "./package.js":
+/*!********************!*\
+  !*** ./package.js ***!
+  \********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// The template for the dynamic webpack entry. Be aware of the variables
+
+const packageJson = __webpack_require__(/*! ./package.json */ "./package.json")
+
+const package = {
+    packageJson,
+    sourceModules: {},
+    dependencies: {},
+}
+
+// This is a special webpack thing that watches the whole directory
+// https://github.com/webpack/docs/wiki/context
+const ctx = __webpack_require__("./code sync recursive \\.(t|j)s(x?)|\\.css$")
+
+ctx.keys().forEach(key => {
+    package.sourceModules[key] = () => ctx(key)
+})
+
+// The packages are passed in through a template
+const packages = {}
+
+package.dependencies = packages
+
+exports.__framer__ = package
+
+
+/***/ }),
+
+/***/ "./package.json":
+/*!**********************!*\
+  !*** ./package.json ***!
+  \**********************/
+/*! exports provided: main, license, devDependencies, peerDependencies, framer, author, dependencies, default */
+/***/ (function(module) {
+
+module.exports = {"main":"dist/index.js","license":"MIT","devDependencies":{"@types/react":"^16.8"},"peerDependencies":{"framer":"^1.0","react":"^16.8"},"framer":{"id":"65e116fe-ba14-4372-95f4-44d166a80faf"},"author":"Jacky Lee","dependencies":{"reactn":"^2.1.4"}};
+
+/***/ }),
+
+/***/ "framer":
+/*!******************************************************************************************!*\
+  !*** external {"root":"Framer","commonjs2":"framer","commonjs":"framer","amd":"framer"} ***!
+  \******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_framer__;
+
+/***/ }),
+
+/***/ "react":
+/*!**************************************************************************************!*\
+  !*** external {"root":"React","commonjs2":"react","commonjs":"react","amd":"react"} ***!
+  \**************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_react__;
+
+/***/ })
+
+/******/ });
+});
+        </script>
+        
+        <script>
+        const data = {
+  "presentationNode": {
+    "componentClass": "Frame",
+    "props": {
+      "key": "RkG5ED_f6",
+      "id": "id_RkG5ED_f6",
+      "willChangeTransform": false,
+      "_constraints": {
+        "enabled": true
+      },
+      "width": 414,
+      "height": 896,
+      "left": 0,
+      "top": 0,
+      "_border": {},
+      "visible": true,
+      "style": {
+        "rotate": 0,
+        "overflow": "hidden",
+        "backgroundColor": "rgba(255,255,255,1)"
+      },
+      "background": {
+        "r": 255,
+        "g": 255,
+        "b": 255,
+        "a": 1,
+        "h": 0,
+        "s": 0,
+        "l": 1,
+        "initialValue": "rgba(255,255,255,1)",
+        "roundA": 1,
+        "format": "rgb"
+      }
+    },
+    "children": [
+      {
+        "componentClass": "ComponentContainer",
+        "props": {
+          "key": "r_kUH46Y8",
+          "id": "id_r_kUH46Y8",
+          "willChangeTransform": false,
+          "_constraints": {
+            "enabled": true
+          },
+          "width": 200,
+          "height": 200,
+          "left": "50%",
+          "top": 196,
+          "center": "x",
+          "componentIdentifier": "./Bluetooth.tsx_Bluetooth",
+          "visible": true,
+          "style": {
+            "rotate": "0deg",
+            "opacity": 1
+          }
+        },
+        "children": [
+          {
+            "componentClass": "./Bluetooth.tsx_Bluetooth",
+            "props": {
+              "width": 200,
+              "height": 200,
+              "placeholders": null,
+              "id": "r_kUH46Y8./Bluetooth.tsx_Bluetooth",
+              "key": "r_kUH46Y8./Bluetooth.tsx_Bluetooth"
+            },
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "metadata": {
+    "name": "Frame",
+    "id": "RkG5ED_f6",
+    "width": 414,
+    "height": 896,
+    "selectionLock": false,
+    "settings": {
+      "deviceType": "framer/FramerAppleIPhoneXR",
+      "zoom": -1,
+      "rotate": false,
+      "bezel": false,
+      "responsive": false,
+      "touch": false,
+      "__class": "PreviewSettings"
+    }
+  },
+  "navigation": {},
+  "customProperties": {}
+};
+        const $build_index_js = document.querySelector("#build_index_js")
+        const script = $build_index_js ? $build_index_js.textContent.trim() : ""
+        
+        // need react to have rendered, before we can do setPreviewData
+        setTimeout(() => {
+            if (script.length > 0) {
+                setPreviewData(script, data)
+            } else {
+                fetch("build/index.js").then((response) => {
+                    return response.text().then((script) => {
+                        setPreviewData(script, data)
+                    })
+                })
+            }
+        }, 0)
+        </script>
+    </body>
+</html>
