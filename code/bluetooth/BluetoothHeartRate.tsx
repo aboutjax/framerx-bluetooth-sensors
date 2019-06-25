@@ -16,15 +16,15 @@ export function BluetoothHeartRate() {
     }
 
     const device = await navigator["bluetooth"].requestDevice({
-      filters: [{ services: ["cycling_power"] }]
+      filters: [{ services: ["heart_rate"] }]
     });
 
     const server = await device.gatt.connect();
 
-    const service = await server.getPrimaryService("cycling_power");
+    const service = await server.getPrimaryService("heart_rate");
 
     const characteristic = await service.getCharacteristic(
-      "cycing_power_measurement"
+      "heart_rate_measurement"
     );
 
     async function startNotifications() {
@@ -42,8 +42,8 @@ export function BluetoothHeartRate() {
         let value = event.target.value.getUint8(1);
 
         // set heart rate array
-        // currentHeartRateArray.push(value)
-        setHeartRateArray([[...currentHeartRateArray, value]]);
+        currentHeartRateArray.push(value);
+        setHeartRateArray(currentHeartRateArray);
       }
     );
   };

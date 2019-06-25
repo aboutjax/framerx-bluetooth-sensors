@@ -779,13 +779,13 @@
             "codeComponentIdentifier" : ".\/zone\/ZonePowerAlt.tsx_ZonePowerAlt",
             "codeComponentProps" : {
               "animationDuration" : 1,
-              "ftp" : 105,
-              "zone1" : "hsl(22, 94%, 82%)",
-              "zone2" : "#1A3768",
-              "zone3" : "#0796CE",
-              "zone4" : "#38D948",
-              "zone5" : "#FCEA00",
-              "zone6" : "#FB6402"
+              "ftp" : 185,
+              "zone1" : "#FFAA22",
+              "zone2" : "#FF7744",
+              "zone3" : "#EE4444",
+              "zone4" : "hsl(0, 74%, 38%)",
+              "zone5" : "hsl(0, 77%, 29%)",
+              "zone6" : "hsl(0, 100%, 15%)"
             },
             "codeOverrideEnabled" : false,
             "constraintsLocked" : false,
@@ -1645,96 +1645,6 @@
             "right" : 0,
             "rotation" : 0,
             "top" : null,
-            "visible" : true,
-            "width" : 375,
-            "widthType" : 0
-          },
-          {
-            "__class" : "CodeComponentNode",
-            "aspectRatio" : null,
-            "bottom" : null,
-            "centerAnchorX" : 0.5,
-            "centerAnchorY" : 0.20504926108374386,
-            "children" : [
-
-            ],
-            "clip" : true,
-            "codeComponentIdentifier" : ".\/bluetooth\/BluetoothHeartRate.tsx_BluetoothHeartRate",
-            "codeComponentProps" : {
-
-            },
-            "codeOverrideEnabled" : false,
-            "constraintsLocked" : false,
-            "deviceType" : null,
-            "exportOptions" : [
-
-            ],
-            "fillColor" : "rgba(255,255,255,1)",
-            "fillEnabled" : false,
-            "fillImage" : null,
-            "fillImagePixelHeight" : null,
-            "fillImagePixelWidth" : null,
-            "fillImageResize" : "fill",
-            "fillLinearGradient" : {
-              "__class" : "LinearGradient",
-              "alpha" : 1,
-              "angle" : 180,
-              "stops" : [
-                {
-                  "__class" : "GradientColorStop",
-                  "position" : 0,
-                  "value" : "rgba(0,0,0,0)"
-                },
-                {
-                  "__class" : "GradientColorStop",
-                  "position" : 1,
-                  "value" : "black"
-                }
-              ]
-            },
-            "fillRadialGradient" : {
-              "__class" : "RadialGradient",
-              "alpha" : 1,
-              "centerAnchorX" : 0.5,
-              "centerAnchorY" : 0.5,
-              "heightFactor" : 0.5,
-              "stops" : [
-                {
-                  "__class" : "GradientColorStop",
-                  "position" : 0,
-                  "value" : "rgba(0,0,0,0)"
-                },
-                {
-                  "__class" : "GradientColorStop",
-                  "position" : 1,
-                  "value" : "black"
-                }
-              ],
-              "widthFactor" : 0.5
-            },
-            "fillType" : "color",
-            "height" : 333,
-            "heightType" : 0,
-            "id" : "I2Iqa3E4g",
-            "intrinsicHeight" : null,
-            "intrinsicWidth" : null,
-            "left" : 0,
-            "locked" : false,
-            "name" : null,
-            "opacity" : 1,
-            "originalid" : null,
-            "parentid" : "dhvxLUVRO",
-            "previewSettings" : null,
-            "radius" : 0,
-            "radiusBottomLeft" : 0,
-            "radiusBottomRight" : 0,
-            "radiusIsRelative" : false,
-            "radiusPerCorner" : false,
-            "radiusTopLeft" : 0,
-            "radiusTopRight" : 0,
-            "right" : 0,
-            "rotation" : 0,
-            "top" : 0,
             "visible" : true,
             "width" : 375,
             "widthType" : 0

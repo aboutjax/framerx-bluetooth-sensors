@@ -41,8 +41,8 @@ export function BluetoothPower() {
         let value = event.target.value.getInt16(1);
 
         // Set power array
-        // currentPowerArray.push(value)
-        setPowerArray([...currentPowerArray, value]);
+        currentPowerArray.push(value);
+        setPowerArray(currentPowerArray);
       }
     );
   };
