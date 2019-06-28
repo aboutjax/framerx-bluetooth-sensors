@@ -24,6 +24,15 @@ const isConnectedVariants = {
   }
 };
 
+const btButtonVariants = {
+  down: {
+    scale: 0.9
+  },
+  up: {
+    scale: 1
+  }
+};
+
 const isConnectedPulseVariants = {
   connected: {
     scale: 2,
@@ -116,6 +125,8 @@ export function BluetoothHeartRate(props) {
       style={style}
       borderRadius={props.height < 100 && props.width < 100 ? 100 : 24}
       onTap={requestBluetoothConnection}
+      whileTap="down"
+      variants={btButtonVariants}
     >
       <Frame
         size={24}
