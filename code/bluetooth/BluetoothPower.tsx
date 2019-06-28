@@ -1,13 +1,67 @@
-import { useGlobal } from "reactn";
+import { useGlobal, resetGlobal } from "reactn";
 import * as React from "react";
-import { Frame } from "framer";
+import { Frame, Color, addPropertyControls, ControlType } from "framer";
 import { SvgIconBluetooth } from "../SvgIcons";
 
-export function BluetoothPower() {
+const isConnectedVariants = {
+  connected: {
+    backgroundColor: Color("#0073FF"),
+    transition: {
+      duration: 0.3,
+      backgroundColor: {
+        duration: 0.3
+      }
+    }
+  },
+  disconnected: {
+    backgroundColor: Color("#d7d7d7"),
+    transition: {
+      duration: 1
+    }
+  }
+};
+
+const isConnectedPulseVariants = {
+  connected: {
+    scale: 2,
+    opacity: 0,
+    backgroundColor: Color("#9FD5FF"),
+    transition: {
+      scale: {
+        duration: 1.2,
+        ease: "easeOut",
+        loop: Infinity
+      },
+      opacity: {
+        duration: 1.2,
+        ease: "easeOut",
+        loop: Infinity
+      }
+    }
+  },
+  disconnected: {
+    scale: 1,
+    opacity: 1,
+    backgroundColor: Color("#9FD5FF")
+  }
+};
+
+addPropertyControls(BluetoothPower, {
+  instruction: {
+    type: ControlType.String,
+    defaultValue: "Tap to connect"
+  }
+});
+
+export function BluetoothPower(props) {
   const [currentPowerArray, setPowerArray] = useGlobal("powerArray");
 
-  const [isLive, setIsLive] = React.useState(false);
+  const [powerIsConnected, setPowerIsConnected] = useGlobal("powerIsConnected");
 
+  const cardVariants = {
+    connected: { height: 200 },
+    disconnected: { height: props.height }
+  };
   const requestBluetoothConnection = async () => {
     if (!navigator["bluetooth"]) {
       return;
@@ -32,7 +86,7 @@ export function BluetoothPower() {
 
     // Hide button after bluetooth connection is established
     startNotifications().then(() => {
-      setIsLive(true);
+      setPowerIsConnected(true);
     });
 
     await characteristic.addEventListener(
@@ -47,31 +101,104 @@ export function BluetoothPower() {
     );
   };
 
-  if (isLive) {
-    return (
-      <Frame opacity={0} size={"100%"} style={style} background={"green"}>
-        Connect
+  return (
+    <Frame
+      borderRadius={props.height < 100 && props.width < 100 ? 100 : 24}
+      size={"100%"}
+      style={style}
+      onTap={requestBluetoothConnection}
+    >
+      <Frame
+        size={24}
+        borderRadius={24}
+        scale={0.7}
+        left={props.height < 100 && props.width < 100 ? 16 : 24}
+        top={props.height < 100 && props.width < 100 ? 16 : 24}
+        variants={isConnectedPulseVariants}
+        animate={powerIsConnected ? "connected" : "disconnected"}
+      />
+      <Frame
+        size={24}
+        borderRadius={24}
+        border={"1px solid rgba(0, 0, 0, 0.2)"}
+        left={props.height < 100 && props.width < 100 ? 16 : 24}
+        top={props.height < 100 && props.width < 100 ? 16 : 24}
+        variants={isConnectedVariants}
+        animate={powerIsConnected ? "connected" : "disconnected"}
+        initial="disconnected"
+      />
+
+      <Frame
+        size={24}
+        scale={0.7}
+        background={"clear"}
+        left={props.height < 100 && props.width < 100 ? 16 : 24}
+        top={props.height < 100 && props.width < 100 ? 16 : 24}
+      >
+        <SvgIconBluetooth color={powerIsConnected ? "#FFF" : "#9e9e9e"} />
       </Frame>
-    );
-  } else {
-    return (
-      <Frame size={"100%"} style={style} onTap={requestBluetoothConnection}>
-        <SvgIconBluetooth color="#ffffff" />
-        <h4>Connect Power Meter</h4>
-      </Frame>
-    );
-  }
+
+      <div
+        style={
+          props.height < 100 && props.width < 100
+            ? labelContainerHideStyle
+            : labelContainerStyle
+        }
+      >
+        <h2 style={headerStyle}>Power</h2>
+
+        {powerIsConnected ? (
+          <h4 style={subHeaderStyleActive}>Connected</h4>
+        ) : (
+          <h4 style={subHeaderStyle}>{props.instruction}</h4>
+        )}
+      </div>
+    </Frame>
+  );
 }
 
 const style = {
-  fontSize: "16px",
+  fontSize: "20px",
   fontWeight: "bold",
-  color: "white",
-  backgroundColor: "#1199EE",
+  backgroundImage:
+    "linear-gradient(180deg, #FFFFFF 1%, #FFFFFF 74%, #F5F5F5 100%)",
   boxShadow:
     "rgba(0, 0, 0, 0.05) 0px 1px 0px, rgba(0, 0, 0, 0.3) 0px 1px 2px, rgba(0, 0, 0, 0.05) 0px 5px 15px",
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "center"
+};
+
+const headerStyle = {
+  margin: "0",
+  color: "black",
+  fontWeight: "600",
+  fontSize: "24px"
+};
+
+const subHeaderStyle = {
+  margin: "0",
+  marginTop: "4px",
+  color: "black",
+  fontWeight: "400",
+  fontSize: "20px",
+  opacity: 0.5
+};
+
+const subHeaderStyleActive = {
+  color: "#0073FF",
+  margin: "0",
+  marginTop: "4px",
+  fontWeight: "400",
+  fontSize: "20px",
+  opacity: 1
+};
+
+const labelContainerStyle = {
+  textAlign: "center"
+};
+
+const labelContainerHideStyle = {
+  display: "none"
 };

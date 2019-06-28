@@ -1,13 +1,12 @@
 import * as React from "react";
 
-export function SvgIconBluetooth(props) {
+export function thumbBluetoothHeartPower() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
       fill="none"
-      stroke={props.color}
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth="2"
