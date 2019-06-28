@@ -1,29 +1,28 @@
 import * as React from "react";
-import * as _ from "lodash";
 import { Frame, addPropertyControls, ControlType, Color } from "framer";
 import { Line } from "react-chartjs-2";
 import { useGlobal } from "reactn";
 
-ChartHeartRate.defaultProps = {
+ChartPowerStream.defaultProps = {
   color: Color("#EE4444"),
   fill: true,
-  ShowYAxes: false,
-  ShowXAxes: false,
-  borderWidth: 1
+  showYAxes: false,
+  showXAxes: false,
+  borderwidth: 1
 };
 
-addPropertyControls(ChartHeartRate, {
+addPropertyControls(ChartPowerStream, {
   color: { type: ControlType.Color, title: "Color" },
-  fill: { type: ControlType.Boolean, title: "Fill" },
+  fill: { type: ControlType.Boolean, title: "Fill Area" },
   borderWidth: {
     type: ControlType.Number,
-    title: "Width",
+    title: "Border Width",
     defaultValue: 1,
     min: 0,
     max: 10,
     step: 0.5
   },
-  ShowYAxes: { type: ControlType.Boolean, title: "Y Axes" },
+  showYAxes: { type: ControlType.Boolean, title: "Show Y Axes" },
   YAxesPosition: {
     type: ControlType.SegmentedEnum,
     defaultValue: "left",
@@ -31,26 +30,23 @@ addPropertyControls(ChartHeartRate, {
     optionTitles: ["Left", "Right"],
     title: "Y Axes position"
   },
-  ShowXAxes: { type: ControlType.Boolean, title: "Show X Axes" }
+  showXAxes: { type: ControlType.Boolean, title: "Show X Axes" }
 });
 
-export function ChartHeartRate(props) {
-  const [currentHeartRateArray, setCurrentHeartRateArray] = useGlobal(
-    "heartRateArray"
-  );
+export function ChartPowerStream(props) {
+  const [currentPowerArray, setCurrentPowerArray] = useGlobal("powerArray");
+  let currentPower = currentPowerArray.slice(-1)[0];
 
-  // Temporary set mock data for heart rate array
+  let streamPowerArray = currentPowerArray.slice(-10, -1);
 
   // React.useEffect(() => {
 
-  //     setCurrentHeartRateArray([60, 40, 100, 60, 60, 60, 100, 60])
+  //     setCurrentPowerArray([200, 500, 60, 40, 200, 100, 600, 60, 100, 200, 100, 800, 500])
   // })
-
-  let currentHeartRate = currentHeartRateArray.slice(-1)[0];
 
   let chartBorderColor = Color(props.color);
   let chartBorderColorRgb = Color.toRgbString(chartBorderColor);
-  let chartFillColor = Color.alpha(chartBorderColor, 0.6);
+  let chartFillColor = Color.alpha(chartBorderColor, 0.3);
   let chartFillColorRgb = Color.toRgbString(chartFillColor);
 
   let chartFillGradientStep1 = Color.toRgbString(
@@ -69,24 +65,23 @@ export function ChartHeartRate(props) {
       display: false
     },
     layout: {
-      padding: {
-        top: 20
-      }
+      padding: { top: 20 }
     },
     scales: {
       yAxes: [
         {
           position: props.YAxesPosition,
-          display: props.ShowYAxes,
+          display: props.showYAxes,
           gridLines: {
             display: false
           },
           ticks: {
             display: true,
-            autoSkip: true,
+            // autoSkip: true,
+            autoSkipPadding: 50,
             maxTicksLimit: 10,
             min: 0
-            // max: 200,
+            // max: 2000,
           }
         }
       ],
@@ -104,13 +99,6 @@ export function ChartHeartRate(props) {
     }
   };
 
-  let avgData = [];
-  let avgDataNew = [];
-
-  currentHeartRateArray.map(() => {
-    avgData.push(_.mean(currentHeartRateArray));
-  });
-
   let data = canvas => {
     const ctx = canvas.getContext("2d");
     const gradient = ctx.createLinearGradient(0, 0, 0, props.height);
@@ -119,7 +107,7 @@ export function ChartHeartRate(props) {
     gradient.addColorStop(1, chartFillGradientStep3);
 
     return {
-      labels: [...currentHeartRateArray, currentHeartRate],
+      labels: streamPowerArray,
       datasets: [
         {
           backgroundColor: gradient,
@@ -127,18 +115,9 @@ export function ChartHeartRate(props) {
           pointRadius: 0,
           borderWidth: props.borderWidth,
           borderColor: chartBorderColorRgb,
-          label: "Heart Rate",
-          data: [...currentHeartRateArray, currentHeartRate]
+          label: "Power",
+          data: streamPowerArray
         }
-        // {
-        //   backgroundColor: "clear",
-        //   fill: false,
-        //   pointRadius: 0,
-        //   borderWidth: 1,
-        //   borderColor: chartBorderColorRgb,
-        //   data: avgData,
-        //   label: "average"
-        // }
       ]
     };
   };

@@ -1,10 +1,9 @@
 import * as React from "react";
-import * as _ from "lodash";
 import { Frame, addPropertyControls, ControlType, Color } from "framer";
 import { Line } from "react-chartjs-2";
 import { useGlobal } from "reactn";
 
-ChartHeartRate.defaultProps = {
+ChartHeartRateStream.defaultProps = {
   color: Color("#EE4444"),
   fill: true,
   ShowYAxes: false,
@@ -12,18 +11,18 @@ ChartHeartRate.defaultProps = {
   borderWidth: 1
 };
 
-addPropertyControls(ChartHeartRate, {
+addPropertyControls(ChartHeartRateStream, {
   color: { type: ControlType.Color, title: "Color" },
-  fill: { type: ControlType.Boolean, title: "Fill" },
+  fill: { type: ControlType.Boolean, title: "Fill Area" },
   borderWidth: {
     type: ControlType.Number,
-    title: "Width",
+    title: "Border Width",
     defaultValue: 1,
     min: 0,
     max: 10,
     step: 0.5
   },
-  ShowYAxes: { type: ControlType.Boolean, title: "Y Axes" },
+  ShowYAxes: { type: ControlType.Boolean, title: "Show Y Axes" },
   YAxesPosition: {
     type: ControlType.SegmentedEnum,
     defaultValue: "left",
@@ -34,17 +33,18 @@ addPropertyControls(ChartHeartRate, {
   ShowXAxes: { type: ControlType.Boolean, title: "Show X Axes" }
 });
 
-export function ChartHeartRate(props) {
+export function ChartHeartRateStream(props) {
   const [currentHeartRateArray, setCurrentHeartRateArray] = useGlobal(
     "heartRateArray"
   );
 
+  let streamHeartRateArray = currentHeartRateArray.slice(-10, -1);
+
   // Temporary set mock data for heart rate array
 
-  // React.useEffect(() => {
-
-  //     setCurrentHeartRateArray([60, 40, 100, 60, 60, 60, 100, 60])
-  // })
+  //   React.useEffect(() => {
+  //     setCurrentHeartRateArray([60, 40, 100, 60, 60, 60, 100, 60]);
+  //   });
 
   let currentHeartRate = currentHeartRateArray.slice(-1)[0];
 
@@ -60,7 +60,7 @@ export function ChartHeartRate(props) {
     Color.alpha(chartBorderColor, 0.4)
   );
   let chartFillGradientStep3 = Color.toRgbString(
-    Color.alpha(chartBorderColor, 0.2)
+    Color.alpha(chartBorderColor, 0.1)
   );
 
   let lineChartOptions = {
@@ -104,13 +104,6 @@ export function ChartHeartRate(props) {
     }
   };
 
-  let avgData = [];
-  let avgDataNew = [];
-
-  currentHeartRateArray.map(() => {
-    avgData.push(_.mean(currentHeartRateArray));
-  });
-
   let data = canvas => {
     const ctx = canvas.getContext("2d");
     const gradient = ctx.createLinearGradient(0, 0, 0, props.height);
@@ -119,7 +112,7 @@ export function ChartHeartRate(props) {
     gradient.addColorStop(1, chartFillGradientStep3);
 
     return {
-      labels: [...currentHeartRateArray, currentHeartRate],
+      labels: streamHeartRateArray,
       datasets: [
         {
           backgroundColor: gradient,
@@ -128,17 +121,8 @@ export function ChartHeartRate(props) {
           borderWidth: props.borderWidth,
           borderColor: chartBorderColorRgb,
           label: "Heart Rate",
-          data: [...currentHeartRateArray, currentHeartRate]
+          data: streamHeartRateArray
         }
-        // {
-        //   backgroundColor: "clear",
-        //   fill: false,
-        //   pointRadius: 0,
-        //   borderWidth: 1,
-        //   borderColor: chartBorderColorRgb,
-        //   data: avgData,
-        //   label: "average"
-        // }
       ]
     };
   };
