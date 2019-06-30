@@ -13,24 +13,43 @@ ChartPower.defaultProps = {
 
 addPropertyControls(ChartPower, {
   color: { type: ControlType.Color, title: "Color" },
-  fill: { type: ControlType.Boolean, title: "Fill Area" },
+  fill: { type: ControlType.Boolean, title: "Fill" },
   borderWidth: {
     type: ControlType.Number,
-    title: "Border Width",
+    title: "Border",
     defaultValue: 1,
     min: 0,
     max: 10,
     step: 0.5
   },
-  showYAxes: { type: ControlType.Boolean, title: "Show Y Axes" },
+  showYAxes: {
+    type: ControlType.SegmentedEnum,
+    defaultValue: "show",
+    options: ["show", "hide"],
+    optionTitles: ["Show", "Hide"],
+    title: "Y Axes"
+  },
   YAxesPosition: {
     type: ControlType.SegmentedEnum,
     defaultValue: "left",
     options: ["left", "right"],
     optionTitles: ["Left", "Right"],
-    title: "Y Axes position"
+    title: "Position",
+    hidden(props) {
+      if (props.showYAxes == "hide") {
+        return true;
+      } else {
+        return false;
+      }
+    }
   },
-  showXAxes: { type: ControlType.Boolean, title: "Show X Axes" }
+  showXAxes: {
+    type: ControlType.SegmentedEnum,
+    defaultValue: "show",
+    options: ["show", "hide"],
+    optionTitles: ["Show", "Hide"],
+    title: "X Axes"
+  }
 });
 
 export function ChartPower(props) {
@@ -64,7 +83,7 @@ export function ChartPower(props) {
       yAxes: [
         {
           position: props.YAxesPosition,
-          display: props.showYAxes,
+          display: props.showYAxes == "show" ? true : false,
           gridLines: {
             display: false
           },
@@ -73,13 +92,12 @@ export function ChartPower(props) {
             autoSkip: true,
             maxTicksLimit: 10,
             min: 0
-            // max: 2000,
           }
         }
       ],
       xAxes: [
         {
-          display: props.ShowXAxes,
+          display: props.showXAxes == "show" ? true : false,
           ticks: {
             display: false
           },

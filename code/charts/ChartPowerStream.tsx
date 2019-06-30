@@ -13,24 +13,43 @@ ChartPowerStream.defaultProps = {
 
 addPropertyControls(ChartPowerStream, {
   color: { type: ControlType.Color, title: "Color" },
-  fill: { type: ControlType.Boolean, title: "Fill Area" },
+  fill: { type: ControlType.Boolean, title: "Fill" },
   borderWidth: {
     type: ControlType.Number,
-    title: "Border Width",
+    title: "Border",
     defaultValue: 1,
     min: 0,
     max: 10,
     step: 0.5
   },
-  showYAxes: { type: ControlType.Boolean, title: "Show Y Axes" },
+  showYAxes: {
+    type: ControlType.SegmentedEnum,
+    defaultValue: "show",
+    options: ["show", "hide"],
+    optionTitles: ["Show", "Hide"],
+    title: "Y Axes"
+  },
   YAxesPosition: {
     type: ControlType.SegmentedEnum,
     defaultValue: "left",
     options: ["left", "right"],
     optionTitles: ["Left", "Right"],
-    title: "Y Axes position"
+    title: "Position",
+    hidden(props) {
+      if (props.showYAxes == "hide") {
+        return true;
+      } else {
+        return false;
+      }
+    }
   },
-  showXAxes: { type: ControlType.Boolean, title: "Show X Axes" }
+  showXAxes: {
+    type: ControlType.SegmentedEnum,
+    defaultValue: "show",
+    options: ["show", "hide"],
+    optionTitles: ["Show", "Hide"],
+    title: "X Axes"
+  }
 });
 
 export function ChartPowerStream(props) {
@@ -38,11 +57,6 @@ export function ChartPowerStream(props) {
   let currentPower = currentPowerArray.slice(-1)[0];
 
   let streamPowerArray = currentPowerArray.slice(-10, -1);
-
-  // React.useEffect(() => {
-
-  //     setCurrentPowerArray([200, 500, 60, 40, 200, 100, 600, 60, 100, 200, 100, 800, 500])
-  // })
 
   let chartBorderColor = Color(props.color);
   let chartBorderColorRgb = Color.toRgbString(chartBorderColor);
@@ -71,7 +85,7 @@ export function ChartPowerStream(props) {
       yAxes: [
         {
           position: props.YAxesPosition,
-          display: props.showYAxes,
+          display: props.showYAxes == "show" ? true : false,
           gridLines: {
             display: false
           },
@@ -87,7 +101,7 @@ export function ChartPowerStream(props) {
       ],
       xAxes: [
         {
-          display: props.ShowXAxes,
+          display: props.showXAxes == "show" ? true : false,
           ticks: {
             display: false
           },

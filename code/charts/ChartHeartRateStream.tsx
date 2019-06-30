@@ -22,15 +22,34 @@ addPropertyControls(ChartHeartRateStream, {
     max: 10,
     step: 0.5
   },
-  ShowYAxes: { type: ControlType.Boolean, title: "Show Y Axes" },
+  showYAxes: {
+    type: ControlType.SegmentedEnum,
+    defaultValue: "show",
+    options: ["show", "hide"],
+    optionTitles: ["Show", "Hide"],
+    title: "Y Axes"
+  },
   YAxesPosition: {
     type: ControlType.SegmentedEnum,
     defaultValue: "left",
     options: ["left", "right"],
     optionTitles: ["Left", "Right"],
-    title: "Y Axes position"
+    title: "Position",
+    hidden(props) {
+      if (props.showYAxes == "hide") {
+        return true;
+      } else {
+        return false;
+      }
+    }
   },
-  ShowXAxes: { type: ControlType.Boolean, title: "Show X Axes" }
+  showXAxes: {
+    type: ControlType.SegmentedEnum,
+    defaultValue: "show",
+    options: ["show", "hide"],
+    optionTitles: ["Show", "Hide"],
+    title: "X Axes"
+  }
 });
 
 export function ChartHeartRateStream(props) {
@@ -77,7 +96,7 @@ export function ChartHeartRateStream(props) {
       yAxes: [
         {
           position: props.YAxesPosition,
-          display: props.ShowYAxes,
+          display: props.showYAxes == "show" ? true : false,
           gridLines: {
             display: false
           },
@@ -92,7 +111,7 @@ export function ChartHeartRateStream(props) {
       ],
       xAxes: [
         {
-          display: props.ShowXAxes,
+          display: props.showXAxes == "show" ? true : false,
           ticks: {
             display: false
           },

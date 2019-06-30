@@ -13,16 +13,16 @@ numberOfData.map(() => {
   powerArrayInit = [...powerArrayInit, _.random(50, 300)];
 });
 
-// setGlobal({
-//   heartRateArray: heartRateArrayInit,
-//   powerArray: powerArrayInit,
-//   heartRateIsConnected: true,
-//   powerIsConnected: true
-// });
-
 setGlobal({
-  heartRateArray: [],
-  heartRateIsConnected: false,
-  powerIsConnected: false,
-  powerArray: []
+  heartRateArray: heartRateArrayInit,
+  powerArray: powerArrayInit,
+  heartRateIsConnected: true,
+  powerIsConnected: true
 });
+
+// setGlobal({
+//   heartRateArray: [],
+//   heartRateIsConnected: false,
+//   powerIsConnected: false,
+//   powerArray: []
+// });
