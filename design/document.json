@@ -16236,7 +16236,7 @@
         "isExternalMaster" : null,
         "isMaster" : false,
         "isTarget" : false,
-        "left" : 33119,
+        "left" : 23632,
         "locked" : false,
         "name" : null,
         "navigationTarget" : null,
@@ -16257,7 +16257,7 @@
         "replicaInfo" : null,
         "right" : null,
         "rotation" : 0,
-        "top" : 9437,
+        "top" : 15000,
         "visible" : true,
         "width" : 800,
         "widthType" : 0
@@ -16911,7 +16911,7 @@
         "isExternalMaster" : null,
         "isMaster" : false,
         "isTarget" : false,
-        "left" : 33119,
+        "left" : 23632,
         "locked" : false,
         "name" : null,
         "navigationTarget" : null,
@@ -16932,7 +16932,7 @@
         "replicaInfo" : null,
         "right" : null,
         "rotation" : 0,
-        "top" : 10137,
+        "top" : 15700,
         "visible" : true,
         "width" : 800,
         "widthType" : 0
@@ -17585,7 +17585,7 @@
         "isExternalMaster" : null,
         "isMaster" : false,
         "isTarget" : false,
-        "left" : 34019,
+        "left" : 24532,
         "locked" : false,
         "name" : null,
         "navigationTarget" : null,
@@ -17606,7 +17606,7 @@
         "replicaInfo" : null,
         "right" : null,
         "rotation" : 0,
-        "top" : 10137,
+        "top" : 15700,
         "visible" : true,
         "width" : 800,
         "widthType" : 0
@@ -18125,7 +18125,7 @@
         "isExternalMaster" : null,
         "isMaster" : false,
         "isTarget" : false,
-        "left" : 34019,
+        "left" : 24532,
         "locked" : false,
         "name" : null,
         "navigationTarget" : null,
@@ -18146,7 +18146,7 @@
         "replicaInfo" : null,
         "right" : null,
         "rotation" : 0,
-        "top" : 9437,
+        "top" : 15000,
         "visible" : true,
         "width" : 800,
         "widthType" : 0
@@ -18644,6 +18644,96 @@
         "top" : 9298,
         "visible" : true,
         "width" : 1036,
+        "widthType" : 0
+      },
+      {
+        "__class" : "TextNode",
+        "autoSize" : true,
+        "bottom" : null,
+        "centerAnchorX" : 0.29428989751098095,
+        "centerAnchorY" : 0.9677734375,
+        "codeOverrideEnabled" : false,
+        "constraintsLocked" : false,
+        "exportOptions" : [
+
+        ],
+        "height" : 278,
+        "heightType" : 0,
+        "id" : "QczSoqSkL",
+        "isTarget" : false,
+        "left" : 23632,
+        "locked" : false,
+        "name" : null,
+        "opacity" : 1,
+        "originalid" : null,
+        "parentid" : "XcRTXaSTW",
+        "right" : null,
+        "rotation" : 0,
+        "styledText" : {
+          "__class" : "StyledTextDraft",
+          "blocks" : [
+            {
+              "data" : {
+                "emptyStyle" : [
+                  "FONT:SFUIDisplay-Bold",
+                  "LETTERSPACING:0.5",
+                  "LINEHEIGHT:2.7",
+                  "SIZE:103",
+                  "COLOR:rgba(0, 0, 0, 1.00)"
+                ]
+              },
+              "depth" : 0,
+              "entityRanges" : [
+
+              ],
+              "inlineStyleRanges" : [
+                {
+                  "length" : 13,
+                  "offset" : 0,
+                  "style" : "FONT:SFUIDisplay-Bold"
+                },
+                {
+                  "length" : 13,
+                  "offset" : 0,
+                  "style" : "LETTERSPACING:0.5"
+                },
+                {
+                  "length" : 13,
+                  "offset" : 0,
+                  "style" : "LINEHEIGHT:2.7"
+                },
+                {
+                  "length" : 13,
+                  "offset" : 0,
+                  "style" : "SIZE:103"
+                },
+                {
+                  "length" : 13,
+                  "offset" : 0,
+                  "style" : "COLOR:rgba(0, 0, 0, 1.00)"
+                }
+              ],
+              "key" : "48v4l",
+              "text" : "Video exports",
+              "type" : "unstyled"
+            }
+          ],
+          "cached" : {
+            "html" : "<div data-offset-key=\"48v4l-0-0\" class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\"><span data-offset-key=\"48v4l-0-0\" style=\"tab-size:4;font-family:&quot;SFUIDisplay-Bold&quot;, &quot;SF UI Display&quot;, sans-serif;-webkit-text-fill-color:rgba(0, 0, 0, 1.00);font-size:103px;letter-spacing:0.5px;line-height:2.7;font-weight:700\"><span data-text=\"true\">Video exports<\/span><\/span><\/div>",
+            "os" : "10_14",
+            "size" : {
+              "height" : 278,
+              "width" : 658
+            },
+            "width" : 0
+          },
+          "entityMap" : {
+
+          }
+        },
+        "top" : 14660,
+        "visible" : true,
+        "width" : 658,
         "widthType" : 0
       }
     ],
