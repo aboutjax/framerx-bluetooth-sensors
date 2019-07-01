@@ -12,5 +12,5 @@ This is an experiment for pairing bluetooth sensors with FramerX prototypes. The
 4. Make each code component listen to global states and render data accordingly.
 
 # Examples
-<blockquote class="imgur-embed-pub" lang="en" data-id="a/j7NEjbm" data-context="false" ><a href="//imgur.com/a/j7NEjbm"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+![Example](https://media.giphy.com/media/WRLC2Qtq5TpXvLSWed/giphy.gif)
 
