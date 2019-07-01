@@ -42,3 +42,22 @@ export function PowerCards(): Override {
     };
   }
 }
+export function PageOverride(): Override {
+  const [heartRateIsConnected, setHeartRateIsConnected] = useGlobal(
+    "heartRateIsConnected"
+  );
+
+  if (heartRateIsConnected) {
+    return {
+      animate: { top: 0 },
+      transition: {
+        height: { type: "spring", damping: 20, tension: 500 },
+        opacity: { duration: 0.1 }
+      }
+    };
+  } else {
+    return {
+      top: 500
+    };
+  }
+}

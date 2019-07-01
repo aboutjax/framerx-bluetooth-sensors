@@ -145,7 +145,7 @@ export function BluetoothPower(props) {
             : labelContainerStyle
         }
       >
-        <h2 style={headerStyle}>KICKR Smart Trainer</h2>
+        <h2 style={headerStyle}>Power Meter</h2>
 
         {powerIsConnected ? (
           <h4 style={subHeaderStyleActive}>Connected</h4>

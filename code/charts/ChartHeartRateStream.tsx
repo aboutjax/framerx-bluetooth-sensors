@@ -13,10 +13,10 @@ ChartHeartRateStream.defaultProps = {
 
 addPropertyControls(ChartHeartRateStream, {
   color: { type: ControlType.Color, title: "Color" },
-  fill: { type: ControlType.Boolean, title: "Fill Area" },
+  fill: { type: ControlType.Boolean, title: "Fill" },
   borderWidth: {
     type: ControlType.Number,
-    title: "Border Width",
+    title: "Border",
     defaultValue: 1,
     min: 0,
     max: 10,

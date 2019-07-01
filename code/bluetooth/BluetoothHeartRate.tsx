@@ -125,7 +125,7 @@ export function BluetoothHeartRate(props) {
       style={style}
       borderRadius={props.height < 100 && props.width < 100 ? 100 : 24}
       onTap={requestBluetoothConnection}
-      whileTap="down"
+      // whileTap="down"
       variants={btButtonVariants}
     >
       <Frame

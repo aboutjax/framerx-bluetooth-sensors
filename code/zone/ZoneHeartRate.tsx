@@ -160,7 +160,7 @@ export function ZoneHeartRate(props) {
         animate={scale2Animation}
         background={props.zone1}
         size={zoneBaseSize + zoneBaseOuterRing}
-        opacity={0.2}
+        opacity={0.4}
         borderRadius={500}
         center
       />
