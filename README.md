@@ -16,3 +16,4 @@ This is an experiment for pairing bluetooth sensors with FramerX prototypes. The
 # Demo using both TICKR & KICKR
 
 ![KICKR & TICKR](https://media.giphy.com/media/lmofJu83ddIVeq943F/giphy.gif)
+See full video: https://www.youtube.com/watch?v=hwoGavlCPXU&feature=youtu.be
