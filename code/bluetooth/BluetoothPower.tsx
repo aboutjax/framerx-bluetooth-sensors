@@ -1,6 +1,12 @@
 import { useGlobal, resetGlobal } from "reactn";
 import * as React from "react";
-import { Frame, Color, addPropertyControls, ControlType } from "framer";
+import {
+  Frame,
+  Color,
+  addPropertyControls,
+  ControlType,
+  RenderTarget
+} from "framer";
 import { SvgIconBluetooth } from "../SvgIcons";
 
 const isConnectedVariants = {
@@ -100,7 +106,6 @@ export function BluetoothPower(props) {
       }
     );
   };
-
   return (
     <Frame
       borderRadius={props.height < 100 && props.width < 100 ? 100 : 24}

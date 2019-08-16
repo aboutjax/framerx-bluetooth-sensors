@@ -1,29 +1,29 @@
-import { setGlobal, useGlobal } from "reactn";
-import * as React from "react";
-import * as _ from "lodash";
+import { setGlobal, useGlobal } from "reactn"
+import * as React from "react"
+import * as _ from "lodash"
 
-let heartRateArrayInit = [];
-let powerArrayInit = [];
+let heartRateArrayInit = []
+let powerArrayInit = []
 
 // Initialise with dummy data
-let numberOfData = _.range(100);
+let numberOfData = _.range(100)
 
 numberOfData.map(() => {
-  heartRateArrayInit = [...heartRateArrayInit, _.random(90, 100)];
-  powerArrayInit = [...powerArrayInit, _.random(50, 300)];
-});
+    heartRateArrayInit = [...heartRateArrayInit, _.random(90, 100)]
+    powerArrayInit = [...powerArrayInit, _.random(50, 300)]
+})
+
+setGlobal({
+    heartRateArray: [],
+    heartRateIsConnected: false,
+    powerIsConnected: false,
+    powerArray: [],
+})
 
 // Uncomment this for dummy data
 // setGlobal({
-//   heartRateArray: heartRateArrayInit,
-//   powerArray: powerArrayInit,
-//   powerIsConnected: true,
-//   heartRateIsConnected: true
-// });
-
-setGlobal({
-  heartRateArray: [],
-  heartRateIsConnected: false,
-  powerIsConnected: false,
-  powerArray: []
-});
+//     heartRateArray: heartRateArrayInit,
+//     powerArray: powerArrayInit,
+//     powerIsConnected: true,
+//     heartRateIsConnected: true,
+// })
