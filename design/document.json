@@ -482,7 +482,7 @@
         "right" : null,
         "rotation" : 0,
         "top" : -691,
-        "visible" : false,
+        "visible" : true,
         "width" : 264,
         "widthType" : 0
       },
@@ -2505,7 +2505,7 @@
             "right" : null,
             "rotation" : 0,
             "top" : 0,
-            "visible" : true,
+            "visible" : false,
             "width" : 0.5,
             "widthType" : 1
           },
@@ -4316,7 +4316,7 @@
             "right" : 0,
             "rotation" : 0,
             "top" : 0,
-            "visible" : true,
+            "visible" : false,
             "width" : 0.5,
             "widthType" : 1
           }
@@ -8132,7 +8132,7 @@
             "right" : 0,
             "rotation" : 0,
             "top" : 0,
-            "visible" : true,
+            "visible" : false,
             "width" : 1366,
             "widthType" : 0
           }
@@ -8300,7 +8300,7 @@
             "right" : 224,
             "rotation" : 0,
             "top" : null,
-            "visible" : true,
+            "visible" : false,
             "width" : 282,
             "widthType" : 0
           },
@@ -9631,7 +9631,7 @@
             "right" : null,
             "rotation" : 0,
             "top" : 20,
-            "visible" : true,
+            "visible" : false,
             "width" : 643,
             "widthType" : 0
           }
@@ -10448,7 +10448,7 @@
             "right" : null,
             "rotation" : 0,
             "top" : 237,
-            "visible" : true,
+            "visible" : false,
             "width" : 778,
             "widthType" : 0
           },
@@ -10506,7 +10506,7 @@
             "right" : 0,
             "rotation" : 0,
             "top" : null,
-            "visible" : true,
+            "visible" : false,
             "width" : 1366,
             "widthType" : 0
           }
@@ -10665,7 +10665,7 @@
             "right" : 0,
             "rotation" : 0,
             "top" : 0,
-            "visible" : true,
+            "visible" : false,
             "width" : 1366,
             "widthType" : 0
           }
@@ -10798,7 +10798,7 @@
             "right" : null,
             "rotation" : 0,
             "top" : null,
-            "visible" : true,
+            "visible" : false,
             "width" : 291,
             "widthType" : 0
           }
@@ -11029,7 +11029,7 @@
             "right" : null,
             "rotation" : 0,
             "top" : null,
-            "visible" : true,
+            "visible" : false,
             "width" : 673,
             "widthType" : 0
           }
@@ -11196,7 +11196,7 @@
             "right" : 0,
             "rotation" : 0,
             "top" : null,
-            "visible" : true,
+            "visible" : false,
             "width" : 1366,
             "widthType" : 0
           },
@@ -11254,7 +11254,7 @@
             "right" : 0,
             "rotation" : 0,
             "top" : null,
-            "visible" : true,
+            "visible" : false,
             "width" : 1366,
             "widthType" : 0
           },
@@ -12052,7 +12052,7 @@
             "right" : 0,
             "rotation" : 0,
             "top" : 0,
-            "visible" : true,
+            "visible" : false,
             "width" : 1366,
             "widthType" : 0
           }
@@ -12206,7 +12206,7 @@
             "right" : 0,
             "rotation" : 0,
             "top" : 0,
-            "visible" : true,
+            "visible" : false,
             "width" : 1366,
             "widthType" : 0
           }
@@ -12375,7 +12375,7 @@
             "right" : null,
             "rotation" : 0,
             "top" : null,
-            "visible" : true,
+            "visible" : false,
             "width" : 500,
             "widthType" : 0
           }
@@ -12543,7 +12543,7 @@
             "right" : null,
             "rotation" : 0,
             "top" : null,
-            "visible" : true,
+            "visible" : false,
             "width" : 500,
             "widthType" : 0
           }
@@ -15328,7 +15328,7 @@
             "right" : null,
             "rotation" : 0,
             "top" : 0,
-            "visible" : true,
+            "visible" : false,
             "width" : 120,
             "widthType" : 0
           },
@@ -15488,7 +15488,7 @@
             "right" : 2,
             "rotation" : 0,
             "top" : 0,
-            "visible" : true,
+            "visible" : false,
             "width" : 588,
             "widthType" : 0
           }
@@ -15745,7 +15745,7 @@
             "right" : null,
             "rotation" : 0,
             "top" : 0,
-            "visible" : true,
+            "visible" : false,
             "width" : 1,
             "widthType" : 1
           },
@@ -15804,7 +15804,7 @@
             "right" : null,
             "rotation" : 0,
             "top" : null,
-            "visible" : true,
+            "visible" : false,
             "width" : 110,
             "widthType" : 0
           }
@@ -15921,7 +15921,7 @@
             "right" : null,
             "rotation" : 0,
             "top" : null,
-            "visible" : true,
+            "visible" : false,
             "width" : 300,
             "widthType" : 0
           }
@@ -16041,7 +16041,7 @@
             "right" : null,
             "rotation" : 0,
             "top" : null,
-            "visible" : true,
+            "visible" : false,
             "width" : 306,
             "widthType" : 0
           }
@@ -16595,7 +16595,7 @@
         "isExternalMaster" : null,
         "isMaster" : false,
         "isTarget" : false,
-        "left" : 29112,
+        "left" : 29062,
         "locked" : false,
         "name" : "Preview",
         "navigationTarget" : null,
@@ -16624,7 +16624,7 @@
         "replicaInfo" : null,
         "right" : null,
         "rotation" : 0,
-        "top" : 19332,
+        "top" : 20068,
         "visible" : true,
         "width" : 1280,
         "widthType" : 0
@@ -17372,10 +17372,10 @@
                         "html" : "<div class='DraftEditor-alignRight'><div data-offset-key=\"1qq2d-0-0\" class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\"><span data-offset-key=\"1qq2d-0-0\" style=\"tab-size:4;font-family:&quot;.SFNSDisplay-Semibold&quot;, &quot;SFProDisplay-Semibold&quot;, &quot;SFUIDisplay-Semibold&quot;, &quot;.SFUIDisplay-Semibold&quot;, sans-serif;-webkit-text-fill-color:hsl(0, 0%, 100%);font-size:24px;letter-spacing:0px;line-height:1.2\"><span data-text=\"true\">@p0pmaker<\/span><\/span><\/div><\/div>",
                         "os" : "10_14",
                         "size" : {
-                          "height" : 56,
-                          "width" : 101
+                          "height" : 28,
+                          "width" : 184
                         },
-                        "width" : 100
+                        "width" : 183
                       },
                       "entityMap" : {
 
@@ -17604,7 +17604,7 @@
         "isExternalMaster" : null,
         "isMaster" : false,
         "isTarget" : false,
-        "left" : 26352,
+        "left" : 27682,
         "locked" : false,
         "name" : "Slide 3",
         "navigationTarget" : null,
@@ -17625,7 +17625,7 @@
         "replicaInfo" : null,
         "right" : null,
         "rotation" : 0,
-        "top" : 21268,
+        "top" : 21243,
         "visible" : true,
         "width" : 1280,
         "widthType" : 0
@@ -17894,10 +17894,10 @@
                         "html" : "<div class='DraftEditor-alignRight'><div data-offset-key=\"1qq2d-0-0\" class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\"><span data-offset-key=\"1qq2d-0-0\" style=\"tab-size:4;font-family:&quot;.SFNSDisplay-Semibold&quot;, &quot;SFProDisplay-Semibold&quot;, &quot;SFUIDisplay-Semibold&quot;, &quot;.SFUIDisplay-Semibold&quot;, sans-serif;-webkit-text-fill-color:hsl(0, 0%, 100%);font-size:24px;letter-spacing:0px;line-height:1.2\"><span data-text=\"true\">@p0pmaker<\/span><\/span><\/div><\/div>",
                         "os" : "10_14",
                         "size" : {
-                          "height" : 56,
-                          "width" : 101
+                          "height" : 28,
+                          "width" : 184
                         },
-                        "width" : 100
+                        "width" : 183
                       },
                       "entityMap" : {
 
@@ -18126,7 +18126,7 @@
         "isExternalMaster" : null,
         "isMaster" : false,
         "isTarget" : false,
-        "left" : 24972,
+        "left" : 26302,
         "locked" : false,
         "name" : "Slide 2",
         "navigationTarget" : null,
@@ -18147,7 +18147,7 @@
         "replicaInfo" : null,
         "right" : null,
         "rotation" : 0,
-        "top" : 21268,
+        "top" : 21243,
         "visible" : true,
         "width" : 1280,
         "widthType" : 0
@@ -18615,7 +18615,6 @@
           },
           {
             "__class" : "ShapeContainerNode",
-            "aspectRatio" : 4.0307692307692307,
             "autoSize" : true,
             "bottom" : 120,
             "centerAnchorX" : 0.74609375,
@@ -19562,7 +19561,6 @@
             "radiusTopLeft" : 0,
             "radiusTopRight" : 0,
             "right" : 120,
-            "rotation" : 0,
             "sizeToFit" : false,
             "top" : null,
             "visible" : true,
@@ -19635,7 +19633,7 @@
         "isExternalMaster" : null,
         "isMaster" : false,
         "isTarget" : false,
-        "left" : 23582,
+        "left" : 24912,
         "locked" : false,
         "name" : "Slide 1",
         "navigationTarget" : null,
@@ -19656,7 +19654,7 @@
         "replicaInfo" : null,
         "right" : null,
         "rotation" : 0,
-        "top" : 21252,
+        "top" : 21227,
         "visible" : true,
         "width" : 1280,
         "widthType" : 0
@@ -19877,10 +19875,10 @@
                     "html" : "<div class='DraftEditor-alignCenter'><div data-offset-key=\"1qq2d-0-0\" class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\"><span data-offset-key=\"1qq2d-0-0\" style=\"tab-size:4;font-family:&quot;Inter-Bold&quot;, &quot;Inter&quot;, serif;-webkit-text-fill-color:rgba(0, 0, 0, 1.00);font-size:64px;letter-spacing:0px;line-height:1.2;font-weight:700\"><span data-text=\"true\">3.  Render Data from Global State<\/span><\/span><\/div><\/div>",
                     "os" : "10_14",
                     "size" : {
-                      "height" : 988,
-                      "width" : 101
+                      "height" : 76,
+                      "width" : 1281
                     },
-                    "width" : 100
+                    "width" : 1280
                   },
                   "entityMap" : {
 
@@ -20136,10 +20134,10 @@
                         "html" : "<div class='DraftEditor-alignRight'><div data-offset-key=\"1qq2d-0-0\" class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\"><span data-offset-key=\"1qq2d-0-0\" style=\"tab-size:4;font-family:&quot;.SFNSDisplay-Semibold&quot;, &quot;SFProDisplay-Semibold&quot;, &quot;SFUIDisplay-Semibold&quot;, &quot;.SFUIDisplay-Semibold&quot;, sans-serif;-webkit-text-fill-color:hsl(0, 0%, 100%);font-size:24px;letter-spacing:0px;line-height:1.2\"><span data-text=\"true\">@p0pmaker<\/span><\/span><\/div><\/div>",
                         "os" : "10_14",
                         "size" : {
-                          "height" : 56,
-                          "width" : 101
+                          "height" : 28,
+                          "width" : 184
                         },
-                        "width" : 100
+                        "width" : 183
                       },
                       "entityMap" : {
 
@@ -20631,10 +20629,10 @@
                     "html" : "<div class='DraftEditor-alignCenter'><div data-offset-key=\"1qq2d-0-0\" class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\"><span data-offset-key=\"1qq2d-0-0\" style=\"tab-size:4;font-family:&quot;Inter-Bold&quot;, &quot;Inter&quot;, serif;-webkit-text-fill-color:rgba(0, 0, 0, 1.00);font-size:64px;letter-spacing:0px;line-height:1.2;font-weight:700\"><span data-text=\"true\">3.  Render Data from Global State<\/span><\/span><\/div><\/div>",
                     "os" : "10_14",
                     "size" : {
-                      "height" : 988,
-                      "width" : 101
+                      "height" : 76,
+                      "width" : 1281
                     },
-                    "width" : 100
+                    "width" : 1280
                   },
                   "entityMap" : {
 
@@ -20890,10 +20888,10 @@
                         "html" : "<div class='DraftEditor-alignRight'><div data-offset-key=\"1qq2d-0-0\" class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\"><span data-offset-key=\"1qq2d-0-0\" style=\"tab-size:4;font-family:&quot;.SFNSDisplay-Semibold&quot;, &quot;SFProDisplay-Semibold&quot;, &quot;SFUIDisplay-Semibold&quot;, &quot;.SFUIDisplay-Semibold&quot;, sans-serif;-webkit-text-fill-color:hsl(0, 0%, 100%);font-size:24px;letter-spacing:0px;line-height:1.2\"><span data-text=\"true\">@p0pmaker<\/span><\/span><\/div><\/div>",
                         "os" : "10_14",
                         "size" : {
-                          "height" : 56,
-                          "width" : 101
+                          "height" : 28,
+                          "width" : 184
                         },
-                        "width" : 100
+                        "width" : 183
                       },
                       "entityMap" : {
 
@@ -21449,10 +21447,10 @@
                     "html" : "<div class='DraftEditor-alignCenter'><div data-offset-key=\"1qq2d-0-0\" class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\"><span data-offset-key=\"1qq2d-0-0\" style=\"tab-size:4;font-family:&quot;Inter-Bold&quot;, &quot;Inter&quot;, serif;-webkit-text-fill-color:rgba(0, 0, 0, 1.00);font-size:64px;letter-spacing:0px;line-height:1.2;font-weight:700\"><span data-text=\"true\">3.  Render Data from Global State<\/span><\/span><\/div><\/div>",
                     "os" : "10_14",
                     "size" : {
-                      "height" : 988,
-                      "width" : 101
+                      "height" : 76,
+                      "width" : 1281
                     },
-                    "width" : 100
+                    "width" : 1280
                   },
                   "entityMap" : {
 
@@ -21708,10 +21706,10 @@
                         "html" : "<div class='DraftEditor-alignRight'><div data-offset-key=\"1qq2d-0-0\" class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\"><span data-offset-key=\"1qq2d-0-0\" style=\"tab-size:4;font-family:&quot;.SFNSDisplay-Semibold&quot;, &quot;SFProDisplay-Semibold&quot;, &quot;SFUIDisplay-Semibold&quot;, &quot;.SFUIDisplay-Semibold&quot;, sans-serif;-webkit-text-fill-color:hsl(0, 0%, 100%);font-size:24px;letter-spacing:0px;line-height:1.2\"><span data-text=\"true\">@p0pmaker<\/span><\/span><\/div><\/div>",
                         "os" : "10_14",
                         "size" : {
-                          "height" : 56,
-                          "width" : 101
+                          "height" : 28,
+                          "width" : 184
                         },
-                        "width" : 100
+                        "width" : 183
                       },
                       "entityMap" : {
 
@@ -22301,7 +22299,7 @@
                     "clip" : true,
                     "codeComponentIdentifier" : ".\/zone\/ZoneHeartRate.tsx_ZoneHeartRate",
                     "codeComponentProps" : {
-                      "maxHeartRate" : 101,
+                      "maxHeartRate" : 97,
                       "zone1" : "hsl(240, 35%, 66%)",
                       "zone2" : "#1A3768",
                       "zone3" : "#0796CE",
@@ -22646,10 +22644,10 @@
                         "html" : "<div class='DraftEditor-alignRight'><div data-offset-key=\"1qq2d-0-0\" class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\"><span data-offset-key=\"1qq2d-0-0\" style=\"tab-size:4;font-family:&quot;.SFNSDisplay-Semibold&quot;, &quot;SFProDisplay-Semibold&quot;, &quot;SFUIDisplay-Semibold&quot;, &quot;.SFUIDisplay-Semibold&quot;, sans-serif;-webkit-text-fill-color:hsl(0, 0%, 100%);font-size:24px;letter-spacing:0px;line-height:1.2\"><span data-text=\"true\">@p0pmaker<\/span><\/span><\/div><\/div>",
                         "os" : "10_14",
                         "size" : {
-                          "height" : 56,
-                          "width" : 101
+                          "height" : 28,
+                          "width" : 184
                         },
-                        "width" : 100
+                        "width" : 183
                       },
                       "entityMap" : {
 
@@ -23097,9 +23095,9 @@
                                 "os" : "10_14",
                                 "size" : {
                                   "height" : 35,
-                                  "width" : 343
+                                  "width" : 149
                                 },
-                                "width" : 342
+                                "width" : 0
                               },
                               "entityMap" : {
 
@@ -23518,9 +23516,9 @@
                             "os" : "10_14",
                             "size" : {
                               "height" : 35,
-                              "width" : 338
+                              "width" : 131
                             },
-                            "width" : 337
+                            "width" : 0
                           },
                           "entityMap" : {
 
@@ -23973,9 +23971,9 @@
                                 "os" : "10_14",
                                 "size" : {
                                   "height" : 35,
-                                  "width" : 343
+                                  "width" : 116
                                 },
-                                "width" : 342
+                                "width" : 0
                               },
                               "entityMap" : {
 
@@ -24394,9 +24392,9 @@
                             "os" : "10_14",
                             "size" : {
                               "height" : 35,
-                              "width" : 338
+                              "width" : 98
                             },
-                            "width" : 337
+                            "width" : 0
                           },
                           "entityMap" : {
 
@@ -24840,9 +24838,9 @@
                                 "os" : "10_14",
                                 "size" : {
                                   "height" : 35,
-                                  "width" : 1169
+                                  "width" : 116
                                 },
-                                "width" : 1168
+                                "width" : 0
                               },
                               "entityMap" : {
 
@@ -26190,9 +26188,9 @@
                                     "os" : "10_14",
                                     "size" : {
                                       "height" : 35,
-                                      "width" : 1169
+                                      "width" : 50
                                     },
-                                    "width" : 1168
+                                    "width" : 0
                                   },
                                   "entityMap" : {
 
@@ -28464,10 +28462,10 @@
                         "html" : "<div class='DraftEditor-alignRight'><div data-offset-key=\"1qq2d-0-0\" class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\"><span data-offset-key=\"1qq2d-0-0\" style=\"tab-size:4;font-family:&quot;.SFNSDisplay-Semibold&quot;, &quot;SFProDisplay-Semibold&quot;, &quot;SFUIDisplay-Semibold&quot;, &quot;.SFUIDisplay-Semibold&quot;, sans-serif;-webkit-text-fill-color:hsl(0, 0%, 100%);font-size:24px;letter-spacing:0px;line-height:1.2\"><span data-text=\"true\">@p0pmaker<\/span><\/span><\/div><\/div>",
                         "os" : "10_14",
                         "size" : {
-                          "height" : 56,
-                          "width" : 101
+                          "height" : 28,
+                          "width" : 184
                         },
-                        "width" : 100
+                        "width" : 183
                       },
                       "entityMap" : {
 
@@ -28696,7 +28694,7 @@
         "isExternalMaster" : null,
         "isMaster" : false,
         "isTarget" : false,
-        "left" : 27732,
+        "left" : 29062,
         "locked" : false,
         "name" : "Slide 4",
         "navigationTarget" : null,
@@ -28717,7 +28715,7 @@
         "replicaInfo" : null,
         "right" : null,
         "rotation" : 0,
-        "top" : 21268,
+        "top" : 21243,
         "visible" : true,
         "width" : 1280,
         "widthType" : 0
@@ -28938,10 +28936,10 @@
                     "html" : "<div class='DraftEditor-alignCenter'><div data-offset-key=\"1qq2d-0-0\" class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\"><span data-offset-key=\"1qq2d-0-0\" style=\"tab-size:4;font-family:&quot;Inter-Bold&quot;, &quot;Inter&quot;, serif;-webkit-text-fill-color:hsl(0, 0%, 0%);font-size:64px;letter-spacing:0px;line-height:1.2;font-weight:700\"><span data-text=\"true\">2. Request Bluetooth Connection<\/span><\/span><\/div><\/div>",
                     "os" : "10_14",
                     "size" : {
-                      "height" : 988,
-                      "width" : 101
+                      "height" : 76,
+                      "width" : 1281
                     },
-                    "width" : 100
+                    "width" : 1280
                   },
                   "entityMap" : {
 
@@ -29197,10 +29195,10 @@
                         "html" : "<div class='DraftEditor-alignRight'><div data-offset-key=\"1qq2d-0-0\" class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\"><span data-offset-key=\"1qq2d-0-0\" style=\"tab-size:4;font-family:&quot;.SFNSDisplay-Semibold&quot;, &quot;SFProDisplay-Semibold&quot;, &quot;SFUIDisplay-Semibold&quot;, &quot;.SFUIDisplay-Semibold&quot;, sans-serif;-webkit-text-fill-color:hsl(0, 0%, 100%);font-size:24px;letter-spacing:0px;line-height:1.2\"><span data-text=\"true\">@p0pmaker<\/span><\/span><\/div><\/div>",
                         "os" : "10_14",
                         "size" : {
-                          "height" : 56,
-                          "width" : 101
+                          "height" : 28,
+                          "width" : 184
                         },
-                        "width" : 100
+                        "width" : 183
                       },
                       "entityMap" : {
 
@@ -30058,7 +30056,7 @@
         "replicaInfo" : null,
         "right" : null,
         "rotation" : 0,
-        "top" : 21268,
+        "top" : 21243,
         "visible" : true,
         "width" : 1280,
         "widthType" : 0
@@ -30110,7 +30108,6 @@
         "navigationTransitionBackdropColor" : "rgba(4,4,15,.4)",
         "navigationTransitionDirection" : "left",
         "opacity" : 1,
-        "originalFilename" : "carbon (8).png",
         "originalid" : null,
         "parentid" : "XcRTXaSTW",
         "previewSettings" : null,
@@ -31933,7 +31930,7 @@
         "guidesY" : [
 
         ],
-        "height" : 1552,
+        "height" : 1457,
         "heightType" : 0,
         "id" : "ZexjKbyFQ",
         "intrinsicHeight" : 1552,
@@ -31962,9 +31959,9 @@
         "replicaInfo" : null,
         "right" : null,
         "rotation" : 0,
-        "top" : 22061,
+        "top" : 22109,
         "visible" : true,
-        "width" : 1024,
+        "width" : 961,
         "widthType" : 0
       },
       {
@@ -32027,7 +32024,7 @@
         "replicaInfo" : null,
         "right" : null,
         "rotation" : 0,
-        "top" : 21992,
+        "top" : 22094,
         "visible" : true,
         "width" : 936,
         "widthType" : 0
