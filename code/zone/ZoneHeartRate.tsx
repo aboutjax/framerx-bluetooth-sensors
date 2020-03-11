@@ -57,8 +57,8 @@ export function ZoneHeartRate(props) {
     }
 
     // React.useEffect(() => {
-    //     setcurrentHeartRateArray([100, 200])
-    // })
+    //     setCurrentHeartRateArray([100, 60])
+    // }, [])
 
     let zoneBaseSize = props.width
     let zoneBaseOuterRing = 100
@@ -164,7 +164,6 @@ export function ZoneHeartRate(props) {
                 width={props.width}
                 center
             >
-                {/* <h4 style={labelStyle}>Heart rate zone</h4> */}
                 <h1 style={metricStyle}>{heartRateZone}</h1>
                 <span style={labelStyle}>Max : {props.maxHeartRate}</span>
             </Frame>

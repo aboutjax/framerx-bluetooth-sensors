@@ -15,8 +15,7 @@
 		"@framer/framer.device-skin-apple-iphone-xr-yellow": "^1.0.0",
 		"@framer/framer.device-skin-apple-iphone-xs-spacegrey": "^1.0.0",
 		"@framer/framer.device-skin-apple-macbook": "^1.0.0",
-		"@types/react": "^16.8",
-		"framer": "1.0.11"
+		"@types/react": "^16.8"
 	},
 	"peerDependencies": {
 		"framer": "^1.0 || ^0.1 || ^0.10",
@@ -27,6 +26,7 @@
 	},
 	"author": "Jacky Lee",
 	"dependencies": {
+		"@framer/framer.default": "^1.45.0",
 		"@framer/steveruizok.preview-in-browser": "^1.3.0",
 		"chart.js": "^2.8.0",
 		"lodash": "^4.17.11",

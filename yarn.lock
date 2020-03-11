@@ -9,6 +9,13 @@
   dependencies:
     regenerator-runtime "^0.12.0"
 
+"@framer/framer.default@^1.45.0":
+  version "1.45.0"
+  resolved "https://registry.framer.com/@framer/framer.default/-/@framer/framer.default-1.45.0.tgz#3710ac1378c9ea16a31d6a457c9339125fe5c808"
+  integrity sha512-T9uY4t09p8SikqpxO8d+kuR4cbqJabavLr71dLcrPYRYyB/BtagfDzxIlUQotXTwdJOckylF+EfcuwRr+mFdKA==
+  dependencies:
+    react-feather "^2.0.3"
+
 "@framer/framer.device-hand-iphone-1@^1.0.0":
   version "1.0.0"
   resolved "https://registry.framer.com/@framer/framer.device-hand-iphone-1/-/@framer/framer.device-hand-iphone-1-1.0.0.tgz#0fbfd5313694b8834b91b138c9a961e59cfea1fd"
@@ -219,11 +226,6 @@ dom-helpers@^3.4.0:
   dependencies:
     "@babel/runtime" "^7.1.2"
 
-framer@1.0.11:
-  version "1.0.11"
-  resolved "https://registry.yarnpkg.com/framer/-/framer-1.0.11.tgz#979f11cb270392323adfbb7d12c08a1f24001f5b"
-  integrity sha512-uPiY02/1JloRzETl59bFJVohLX0E5uoIN8CuWhlpXmAoytNY4DQZI/SZ1lz6oVVZGaUyPgDGEvWvzgbjK1WXVg==
-
 "js-tokens@^3.0.0 || ^4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
@@ -271,7 +273,7 @@ performance-now@^2.1.0:
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
   integrity sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns=
 
-prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.2:
+prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -294,6 +296,13 @@ react-chartjs-2@^2.7.6:
   dependencies:
     lodash "^4.17.4"
     prop-types "^15.5.8"
+
+react-feather@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/react-feather/-/react-feather-2.0.3.tgz#1453ff5d8c242f72b8c02846118fbd2d406375ad"
+  integrity sha512-XVjtxIyMxb2RFlqC2APoB/IZvXKDW9uLN1c264XEeZNYe8jIxjQVQpeTo3nxtHiLTgMfgf0ZYxJC6HwmY8+9BA==
+  dependencies:
+    prop-types "^15.7.2"
 
 react-is@^16.8.1:
   version "16.8.6"
