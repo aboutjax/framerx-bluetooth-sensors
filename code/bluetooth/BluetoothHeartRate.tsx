@@ -112,11 +112,11 @@ export function BluetoothHeartRate(props) {
                 // Refer to https://www.bluetooth.com/specifications/gatt/characteristics/
                 let value = event.target.value.getUint8(1)
 
-                console.log(value)
-
                 // set heart rate array
                 currentHeartRateArray.push(value)
                 setHeartRateArray(currentHeartRateArray)
+
+                console.log("entire heart rate array: " + currentHeartRateArray)
             }
         )
     }

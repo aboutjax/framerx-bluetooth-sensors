@@ -13,16 +13,14 @@ import {
 // API Reference: https://www.framer.com/api
 
 export function StatPeakHeartRate(props) {
-    const [currentHeartRateArray, setCurrentHeartRateArray] = useGlobal(
-        "heartRateArray"
-    )
+    const [heartRateArray] = useGlobal("heartRateArray")
 
     let peakHeartRate
 
-    if (currentHeartRateArray.length == 0) {
+    if (heartRateArray.length == 0) {
         peakHeartRate = 0
     } else {
-        peakHeartRate = Math.max(...currentHeartRateArray)
+        peakHeartRate = Math.max(...heartRateArray)
     }
 
     return (
