@@ -22,14 +22,14 @@ setGlobal({
 })
 
 // Uncomment this for dummy data
-setGlobal({
-    heartRateArray: heartRateArrayInit,
-    powerArray: powerArrayInit,
-    powerIsConnected: true,
-    heartRateIsConnected: true,
-})
+// setGlobal({
+//     heartRateArray: heartRateArrayInit,
+//     powerArray: powerArrayInit,
+//     powerIsConnected: true,
+//     heartRateIsConnected: true,
+// })
 
-// Simulator (TO-DO)
+// // Simulator (TO-DO)
 // export function Simulator(props) {
 //     const [currentHeartRateArray, setCurrentHeartRateArray] = useGlobal(
 //         "heartRateArray"
